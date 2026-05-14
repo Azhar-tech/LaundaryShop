@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import {
   TweaksPanel,
   TweakSection,
@@ -8,6 +8,8 @@ import {
   TweakRadio,
   useTweaks,
 } from './tweak/tweaksPanel.jsx';
+import { JsonLdScript } from './seo/JsonLdScript.jsx';
+import { getLocalBusinessJsonLd } from './seo/localBusinessJsonLd.js';
 
 const PHONE_DISPLAY = '0323 555 7878';
 const PHONE_RAW = '+923235557878';
@@ -24,14 +26,31 @@ const TWEAK_DEFAULTS = {
 function LogoMark() {
   return (
     <span className="logo-mark" aria-hidden="true">
-      <img src="/logo.png" alt="" width="440" height="104" decoding="async" />
+      <img
+        src="/logo.png"
+        alt="New Way Dry Cleaners — LaundryCare.pk, Islamabad"
+        width="440"
+        height="104"
+        decoding="async"
+      />
     </span>
   );
 }
 
-function NavLinkItem({ to, label, end }) {
+function NavLinkItem({ to, label, end, drawer = false }) {
   return (
-    <NavLink to={to} className={({ isActive }) => (isActive ? 'active' : undefined)} end={end}>
+    <NavLink
+      to={to}
+      end={end}
+      className={({ isActive }) =>
+        [
+          drawer ? 'nav-drawer-link' : undefined,
+          isActive ? 'active' : undefined,
+        ]
+          .filter(Boolean)
+          .join(' ')
+      }
+    >
       {label}
     </NavLink>
   );
@@ -102,8 +121,32 @@ function SiteTweaks() {
 }
 
 export function Layout() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    queueMicrotask(() => {
+      setMenuOpen(false);
+    });
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [menuOpen]);
+
   return (
     <>
+      <JsonLdScript id="ld-json-local-business" json={getLocalBusinessJsonLd()} />
       <header className="site-header">
         <div className="container nav">
           <Link className="logo" to="/" aria-label="New Way Dry Cleaners — Home">
@@ -113,13 +156,33 @@ export function Layout() {
               <span className="b">Dry Cleaners</span>
             </span>
           </Link>
+
           <nav className="nav-links" aria-label="Primary">
             <NavLinkItem to="/" label="Home" end />
             <NavLinkItem to="/services" label="Services" />
             <NavLinkItem to="/about" label="About" />
             <NavLinkItem to="/contact" label="Contact" />
           </nav>
-          <div className="nav-cta">
+          <div className="nav-trailing">
+            <button
+              type="button"
+              className="nav-toggle"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="site-nav-drawer"
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+                  <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" />
+                </svg>
+              ) : (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+                  <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+                </svg>
+              )}
+            </button>
+            <div className="nav-cta">
             <a className="nav-phone" href={`tel:${PHONE_RAW}`} title="Call us">
               <svg
                 width="16"
@@ -135,15 +198,62 @@ export function Layout() {
               </svg>
               {PHONE_DISPLAY}
             </a>
-            <Link className="btn btn-primary" to="/contact#book">
+            <Link className="btn btn-primary nav-book-btn" to="/contact#book">
               Book pickup
               <svg className="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
             </Link>
           </div>
+          </div>
         </div>
       </header>
+
+      {menuOpen ? (
+        <div className="nav-mobile-root">
+          <div
+            role="presentation"
+            className="nav-overlay"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div
+            id="site-nav-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            className="nav-drawer"
+          >
+            <div className="nav-drawer-inner">
+              <div className="nav-drawer-top">
+                <span className="nav-drawer-title">Menu</span>
+                <button type="button" className="nav-drawer-close" aria-label="Close menu" onClick={() => setMenuOpen(false)}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+                    <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
+              <nav className="nav-drawer-links" aria-label="Primary mobile">
+                <NavLinkItem to="/" label="Home" end drawer />
+                <NavLinkItem to="/services" label="Services" drawer />
+                <NavLinkItem to="/about" label="About" drawer />
+                <NavLinkItem to="/contact" label="Contact" drawer />
+                <NavLinkItem to="/laundry-service-islamabad" label="Laundry — Islamabad" drawer />
+                <NavLinkItem to="/dry-cleaning-islamabad" label="Dry cleaning — Islamabad" drawer />
+                <NavLinkItem to="/ironing-service-islamabad" label="Ironing — Islamabad" drawer />
+              </nav>
+              <div className="nav-drawer-cta">
+                <a className="btn btn-ghost btn-block" href={`tel:${PHONE_RAW}`}>
+                  Call {PHONE_DISPLAY}
+                </a>
+                <Link className="btn btn-primary btn-block" to="/contact#book">
+                  Book pickup
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <Outlet />
 
@@ -199,6 +309,23 @@ export function Layout() {
                 </li>
                 <li>
                   <Link to="/services#carpet">Carpet Cleaning</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4>Popular in Islamabad</h4>
+              <ul>
+                <li>
+                  <Link to="/laundry-service-islamabad">Laundry pickup Islamabad</Link>
+                </li>
+                <li>
+                  <Link to="/dry-cleaning-islamabad">Dry cleaning Islamabad</Link>
+                </li>
+                <li>
+                  <Link to="/ironing-service-islamabad">Ironing / steam press</Link>
+                </li>
+                <li>
+                  <Link to="/contact#book">Book pickup</Link>
                 </li>
               </ul>
             </div>
