@@ -1,5 +1,7 @@
 /** Shared FAQ entries: visible copy on home must match FAQPage schema. */
 
+import { BUSINESS } from './constants.js';
+
 export const HOME_FAQ = [
   {
     q: 'Do you offer laundry pickup in Islamabad?',
@@ -7,7 +9,7 @@ export const HOME_FAQ = [
   },
   {
     q: 'Can I book an online laundry service without visiting the shop?',
-    a: 'Yes. LaundryCare.pk is built for WhatsApp-first booking—send photos of your garments, confirm the quote, and we collect from your doorstep. Walk-ins still welcome at F10/2 Idrees Market.',
+    a: 'Yes. LaundryCare.pk is built for WhatsApp-first booking—send photos of your garments, confirm the quote, and we collect from your doorstep. Walk-ins still welcome at our F-10 shop on Street 8.',
   },
   {
     q: 'How fast is dry cleaning and wash & fold in Islamabad?',
@@ -19,7 +21,7 @@ export const HOME_FAQ = [
   },
   {
     q: 'Where are you located—as a dry cleaner near me?',
-    a: 'We are at F10/2 Idrees Market, Islamabad. If you live in twin cities neighbourhoods we serve free pickup riders may be closer than you think—same professional clean, no minimum order.',
+    a: `We are at ${BUSINESS.fullAddress}. If you live in twin cities neighbourhoods we serve free pickup riders may be closer than you think—same professional clean, no minimum order.`,
   },
   {
     q: 'Is there a minimum order for laundry pickup?',

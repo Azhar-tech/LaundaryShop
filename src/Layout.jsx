@@ -10,10 +10,10 @@ import {
 } from './tweak/tweaksPanel.jsx';
 import { JsonLdScript } from './seo/JsonLdScript.jsx';
 import { getLocalBusinessJsonLd } from './seo/localBusinessJsonLd.js';
+import { BUSINESS } from './seo/constants.js';
 
 const PHONE_DISPLAY = '0323 555 7878';
 const PHONE_RAW = '+923235557878';
-const ADDRESS = 'F10/2, Idrees Market, Islamabad';
 const HOURS = 'Open 8:00am – 10:00pm, daily';
 
 const TWEAK_DEFAULTS = {
@@ -349,7 +349,7 @@ export function Layout() {
             <div>
               <h4>Visit / Call</h4>
               <ul>
-                <li>{ADDRESS}</li>
+                <li>{BUSINESS.fullAddress}</li>
                 <li>
                   <a href={`tel:${PHONE_RAW}`}>{PHONE_DISPLAY}</a>
                 </li>
