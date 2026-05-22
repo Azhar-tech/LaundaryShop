@@ -92,7 +92,7 @@
 /* ── Base ──────────────────────────────────────────────────── */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: clip; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--ink);
@@ -162,10 +162,14 @@ p  { margin: 0; color: var(--ink-soft); text-wrap: pretty; }
 /* ── Header / nav ──────────────────────────────────────────── */
 .site-header {
   position: sticky; top: 0; z-index: 50;
+  max-width: 100%;
+  overflow-x: clip;
+  padding-top: env(safe-area-inset-top, 0px);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
-  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  background: color-mix(in srgb, var(--bg) 96%, transparent);
   border-bottom: 1px solid var(--line-soft);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--line-soft) 80%, transparent);
 }
 .nav {
   display: flex;
@@ -971,7 +975,22 @@ a.nav-drawer-link.active {
   }
 
   /* Mobile / tablet chrome */
-  .nav { min-height: 80px; padding-block: 12px; }
+  .nav {
+    min-height: 80px;
+    padding-block: 12px;
+    gap: 8px;
+    min-width: 0;
+  }
+  .site-header .logo {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+  .site-header .logo-mark img {
+    height: 56px;
+    max-width: min(180px, 38vw);
+  }
+  .nav-trailing { gap: 6px; }
+  .nav-cta { gap: 6px; }
   .nav-toggle { display: inline-flex; }
   .nav-links { display: none; }
 
@@ -1032,19 +1051,76 @@ a.nav-drawer-link.active {
     min-height: 48px;
   }
 
-  .nav-book-btn.btn {
-    min-height: 44px;
-    padding-inline: 16px;
-    font-size: 14px;
+  .nav {
+    min-height: 72px;
+    padding-block: 10px;
+    gap: 6px;
   }
-
+  .site-header .logo-mark img {
+    height: 44px;
+    max-width: min(120px, 32vw);
+  }
+  .nav-trailing { gap: 4px; }
+  .nav-cta { gap: 4px; }
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
+  }
+  .nav-book-btn.btn {
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+    gap: 6px;
+  }
+  .nav-book-btn.btn .ico {
+    width: 16px;
+    height: 16px;
+  }
   .nav-phone {
     font-size: 12px;
-    padding-inline: 10px;
+    padding: 8px 10px;
+    white-space: nowrap;
+    gap: 6px;
+  }
+  .nav-phone svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
   }
 }
 
 @media (max-width: 480px) {
+  .container { padding: 0 14px; }
+  .nav {
+    min-height: 64px;
+    padding-block: 8px;
+    gap: 4px;
+  }
+  .site-header .logo-mark img {
+    height: 38px;
+    max-width: min(80px, 28vw);
+  }
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+  .nav-phone {
+    font-size: 11px;
+    padding: 6px 8px;
+    gap: 4px;
+  }
+  .nav-book-btn.btn {
+    min-height: 36px;
+    padding: 6px 10px;
+    font-size: 12px;
+    gap: 4px;
+  }
+  .nav-book-btn.btn .ico {
+    width: 14px;
+    height: 14px;
+  }
   .hero { padding-bottom: 64px; }
   .trust-strip .container {
     gap: 16px 24px;
