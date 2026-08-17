@@ -6,10 +6,10 @@ export default function DryCleaningIslamabad() {
   return (
     <>
       <SeoHead
-        title="Dry cleaning Islamabad — suits, sarees | LaundryCare.pk"
-        description="Professional dry cleaners in Islamabad: bridalwear, coats & office suits cleaned at LaundryCare.pk. Book pickup across Islamabad-Rawalpindi."
+        title="Dry cleaning Islamabad — dry cleaner near me"
+        description="Dry cleaner near me in Islamabad: suits, sarees & bridal at F10 Idrees Market. Free pickup across twin cities · 24h turnaround · LaundryCare.pk."
         path="/dry-cleaning-islamabad"
-        keywords="dry cleaning Islamabad, dry cleaners near me Islamabad, bridal dry cleaning Pakistan, LaundryCare.pk"
+        keywords="dry cleaning Islamabad, dry cleaner near me, dry cleaners near me Islamabad, bridal dry cleaning Pakistan, LaundryCare.pk"
       />
       <PageContent html={MARKUP} />
     </>

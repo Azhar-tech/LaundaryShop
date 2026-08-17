@@ -7,6 +7,10 @@ import Services from './pages/Services.jsx';
 import LaundryServiceIslamabad from './pages/LaundryServiceIslamabad.jsx';
 import DryCleaningIslamabad from './pages/DryCleaningIslamabad.jsx';
 import IroningServiceIslamabad from './pages/IroningServiceIslamabad.jsx';
+import LaundryNearMeIslamabad from './pages/LaundryNearMeIslamabad.jsx';
+import DryCleanersNearMeIslamabad from './pages/DryCleanersNearMeIslamabad.jsx';
+import NewWayLocation from './pages/NewWayLocation.jsx';
+import PakwayLocation from './pages/PakwayLocation.jsx';
 
 export default function App() {
   return (
@@ -16,9 +20,13 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/new-way-dry-cleaners-f10" element={<NewWayLocation />} />
+        <Route path="/pakway-dry-cleaners-g15" element={<PakwayLocation />} />
         <Route path="/laundry-service-islamabad" element={<LaundryServiceIslamabad />} />
         <Route path="/dry-cleaning-islamabad" element={<DryCleaningIslamabad />} />
         <Route path="/ironing-service-islamabad" element={<IroningServiceIslamabad />} />
+        <Route path="/laundry-near-me-islamabad" element={<LaundryNearMeIslamabad />} />
+        <Route path="/dry-cleaners-near-me-islamabad" element={<DryCleanersNearMeIslamabad />} />
       </Route>
     </Routes>
   );
