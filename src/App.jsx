@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/new-way-dry-cleaners-f10" element={<NewWayLocation />} />
-        <Route path="/pakway-dry-cleaners-g15" element={<PakwayLocation />} />
+        <Route path="/pak-way-dry-cleaners-g15" element={<PakwayLocation />} />
         <Route path="/laundry-service-islamabad" element={<LaundryServiceIslamabad />} />
         <Route path="/dry-cleaning-islamabad" element={<DryCleaningIslamabad />} />
         <Route path="/ironing-service-islamabad" element={<IroningServiceIslamabad />} />

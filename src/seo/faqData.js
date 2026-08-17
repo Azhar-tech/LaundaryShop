@@ -11,7 +11,7 @@ export const HOME_FAQ = [
   },
   {
     q: 'Can I book an online laundry service without visiting the shop?',
-    a: 'Yes. LaundryCare.pk is built for WhatsApp-first booking—send photos of your garments, confirm the quote, and we collect from your doorstep. Walk-ins welcome at New Way (F10 Idrees Market) or Pakway (G15 Century Mall Plaza), 8am–10pm daily.',
+    a: 'Yes. LaundryCare.pk is built for WhatsApp-first booking—send photos of your garments, confirm the quote, and we collect from your doorstep. Walk-ins welcome at New Way (F10 Idrees Market) or Pak Way (G15 Century Mall Plaza), 8am–10pm daily.',
   },
   {
     q: 'How fast is dry cleaning and wash & fold in Islamabad?',
@@ -23,7 +23,7 @@ export const HOME_FAQ = [
   },
   {
     q: 'Where are you located—as a dry cleaner near me?',
-    a: `We have two shops: New Way at ${NW.fullAddress}, and Pakway at ${PW.fullAddress}. Free pickup riders cover most twin-city neighbourhoods—WhatsApp the shop nearest you.`,
+    a: `We have two shops: New Way at ${NW.fullAddress}, and Pak Way at ${PW.fullAddress}. Free pickup riders cover most twin-city neighbourhoods—WhatsApp the shop nearest you.`,
   },
   {
     q: 'Is there a minimum order for laundry pickup?',
@@ -31,7 +31,7 @@ export const HOME_FAQ = [
   },
   {
     q: 'Is there a laundry shop near me in Islamabad?',
-    a: `Our shops are New Way (${NW.areaLabel}) and Pakway (${PW.areaLabel})—both open 8am–10pm. Free pickup is available across covered areas; message the shop closest to you on WhatsApp.`,
+    a: `Our shops are New Way (${NW.areaLabel}) and Pak Way (${PW.areaLabel})—both open 8am–10pm. Free pickup is available across covered areas; message the shop closest to you on WhatsApp.`,
   },
   {
     q: 'Do you offer dhobi / laundry pickup near me?',
@@ -65,7 +65,7 @@ export const LAUNDRY_NEAR_ME_FAQ = [
 export const DRY_CLEANERS_NEAR_ME_FAQ = [
   {
     q: 'Where are dry cleaners near me in Islamabad?',
-    a: `New Way Dry Cleaners is at ${NW.fullAddress}. Pakway Dry Cleaners is at ${PW.fullAddress}. We also offer free pickup across Islamabad and Rawalpindi if visiting a shop is not convenient.`,
+    a: `New Way Dry Cleaners is at ${NW.fullAddress}. Pak Way Dry Cleaners is at ${PW.fullAddress}. We also offer free pickup across Islamabad and Rawalpindi if visiting a shop is not convenient.`,
   },
   {
     q: 'Can dry cleaners near me pick up suits and sarees?',

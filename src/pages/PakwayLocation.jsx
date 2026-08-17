@@ -22,10 +22,10 @@ export default function PakwayLocation() {
   return (
     <>
       <SeoHead
-        title="Pakway Dry Cleaners G15 — Century Mall Plaza Islamabad"
-        description="Pakway Dry Cleaners at G15 Markaz Century Mall Plaza: dry cleaning, laundry & pickup. Call 0349 596 3359 · open 8am–10pm daily."
+        title="Pak Way Dry Cleaners G15 — Century Mall Plaza Islamabad"
+        description="Pak Way Dry Cleaners at G15 Markaz Century Mall Plaza: dry cleaning, laundry & pickup. Call 0349 596 3359 · open 8am–10pm daily."
         path={`/${loc.slug}`}
-        keywords="Pakway dry cleaners G15, Century Mall Plaza laundry Islamabad, LaundryCare.pk G-15"
+        keywords="Pak Way dry cleaners G15, Century Mall Plaza laundry Islamabad, LaundryCare.pk G-15"
       />
       <JsonLdScript id="ld-json-pakway" json={getLocationJsonLd('pakway')} />
       <PageContent html={MARKUP} />

@@ -1,8 +1,15 @@
-{
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ]
-  }
+{
+  "redirects": [
+    {
+      "source": "/pakway-dry-cleaners-g15",
+      "destination": "/pak-way-dry-cleaners-g15",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

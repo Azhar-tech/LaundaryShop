@@ -8,7 +8,7 @@ import {
   TweakRadio,
   useTweaks,
 } from './tweak/tweaksPanel.jsx';
-import { HOURS_LABEL, LOCATIONS, SOCIAL_LINKS } from './seo/constants.js';
+import { HOURS_LABEL, LOCATIONS, SOCIAL_LINKS, getLocationPagePath } from './seo/constants.js';
 
 const NW = LOCATIONS.newWay;
 const PW = LOCATIONS.pakway;
@@ -25,7 +25,7 @@ function LogoMark() {
     <span className="logo-mark" aria-hidden="true">
       <img
         src="/logo.png"
-        alt="LaundryCare.pk — New Way & Pakway Dry Cleaners, Islamabad"
+        alt="LaundryCare.pk — New Way & Pak Way Dry Cleaners, Islamabad"
         width="440"
         height="104"
         decoding="async"
@@ -68,7 +68,7 @@ function NavDropdown({ label, items }) {
 
 const SHOP_NAV_ITEMS = [
   { to: '/new-way-dry-cleaners-f10', label: 'New Way — F10' },
-  { to: '/pakway-dry-cleaners-g15', label: 'Pakway — G15' },
+  { to: getLocationPagePath(PW), label: 'Pak Way — G15' },
 ];
 
 const ISLAMABAD_NAV_ITEMS = [
@@ -194,7 +194,7 @@ export function Layout() {
             <LogoMark />
             <span className="logo-text">
               <span className="a">LaundryCare.pk</span>
-              <span className="b">New Way &amp; Pakway</span>
+              <span className="b">New Way &amp; Pak Way</span>
             </span>
           </Link>
 
@@ -281,7 +281,7 @@ export function Layout() {
                 <NavLinkItem to="/about" label="About" drawer />
                 <NavLinkItem to="/contact" label="Contact" drawer />
                 <NavLinkItem to="/new-way-dry-cleaners-f10" label="New Way — F10" drawer />
-                <NavLinkItem to="/pakway-dry-cleaners-g15" label="Pakway — G15" drawer />
+                <NavLinkItem to={getLocationPagePath(PW)} label="Pak Way — G15" drawer />
                 <NavLinkItem to="/laundry-near-me-islamabad" label="Laundry near me" drawer />
                 <NavLinkItem to="/dry-cleaners-near-me-islamabad" label="Dry cleaners near me" drawer />
                 <NavLinkItem to="/laundry-service-islamabad" label="Laundry — Islamabad" drawer />
@@ -293,7 +293,7 @@ export function Layout() {
                   Call New Way {NW.phoneDisplay}
                 </a>
                 <a className="btn btn-ghost btn-block" href={`tel:${PW.phone}`}>
-                  Call Pakway {PW.phoneDisplay}
+                  Call Pak Way {PW.phoneDisplay}
                 </a>
                 <Link className="btn btn-primary btn-block" to="/contact#book">
                   Book pickup
@@ -314,7 +314,7 @@ export function Layout() {
                 <LogoMark />
                 <span className="logo-text">
                   <span className="a">LaundryCare.pk</span>
-                  <span className="b">New Way &amp; Pakway</span>
+                  <span className="b">New Way &amp; Pak Way</span>
                 </span>
               </Link>
               <p className="blurb" style={{ marginTop: '18px' }}>
@@ -371,7 +371,7 @@ export function Layout() {
                   <Link to="/new-way-dry-cleaners-f10">New Way — F10</Link>
                 </li>
                 <li>
-                  <Link to="/pakway-dry-cleaners-g15">Pakway — G15</Link>
+                  <Link to={getLocationPagePath(PW)}>Pak Way — G15</Link>
                 </li>
                 <li>
                   <Link to="/laundry-near-me-islamabad">Laundry near me</Link>
@@ -426,7 +426,7 @@ export function Layout() {
               </ul>
             </div>
             <div>
-              <h4>Pakway — G15</h4>
+              <h4>Pak Way — G15</h4>
               <ul>
                 <li>{PW.fullAddress}</li>
                 <li>
@@ -437,7 +437,7 @@ export function Layout() {
             </div>
           </div>
           <div className="foot-bot">
-            <span>© {new Date().getFullYear()} LaundryCare.pk — New Way &amp; Pakway Dry Cleaners.</span>
+            <span>© {new Date().getFullYear()} LaundryCare.pk — New Way &amp; Pak Way Dry Cleaners.</span>
             <span>Made with care in Islamabad</span>
           </div>
         </div>

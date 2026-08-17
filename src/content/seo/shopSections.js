@@ -27,7 +27,7 @@ const SHOP_PICKER = `
       <span class="eyebrow" style="margin-bottom:14px">LaundryCare.pk</span>
       <h1>Laundry &amp; dry cleaning in Islamabad — choose your shop</h1>
       <p class="lede" style="margin-top:16px; max-width:52ch">
-        Two trusted locations: <strong>New Way</strong> at F-10 Idrees Market and <strong>Pakway</strong> at G-15 Century Mall Plaza. Same quality — dry cleaning, wash &amp; fold, steam press and free pickup.
+        Two trusted locations: <strong>New Way</strong> at F-10 Idrees Market and <strong>Pak Way</strong> at G-15 Century Mall Plaza. Same quality — dry cleaning, wash &amp; fold, steam press and free pickup.
       </p>
       <div class="shop-picker-grid">
         ${shopCard(nw)}
@@ -48,7 +48,7 @@ const DUAL_SHOPS_SECTION = `
       <div class="section-head">
         <div class="h-left">
           <span class="eyebrow">Our shops</span>
-          <h2>Visit New Way or Pakway</h2>
+          <h2>Visit New Way or Pak Way</h2>
         </div>
         <p class="lede" style="max-width:42ch">Walk in 8am–10pm daily, or WhatsApp either shop for free pickup.</p>
       </div>
