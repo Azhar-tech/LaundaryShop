@@ -1401,3 +1401,57 @@ a.nav-drawer-link.active {
 .blog-prose ul.seo-checklist {
   margin-top: 8px;
 }
+.blog-promo-box {
+  padding: 28px 32px;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--blue-700);
+  background: var(--blue-50);
+  margin-bottom: 32px;
+}
+.blog-promo-box-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: var(--ink);
+}
+.blog-promo-box-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
+.blog-promo-box-row strong {
+  font-size: 20px;
+  color: var(--blue-700);
+}
+.blog-promo-box-highlight {
+  background: var(--bg);
+  margin: 8px -16px 0;
+  padding: 16px 16px;
+  border-radius: var(--radius-md);
+  border-bottom: none;
+}
+.blog-promo-box-note {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.blog-promo-box-foot {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.blog-offer-steps {
+  padding-left: 1.25em;
+  line-height: 1.75;
+  font-size: 16.5px;
+  margin: 0 0 16px;
+}
+.blog-offer-steps li {
+  margin-bottom: 10px;
+}
