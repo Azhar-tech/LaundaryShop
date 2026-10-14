@@ -203,6 +203,7 @@ export function Layout() {
             <NavLinkItem to="/services" label="Services" />
             <NavDropdown label="Our shops" items={[...SHOP_NAV_ITEMS, ...ISLAMABAD_NAV_ITEMS]} />
             <NavLinkItem to="/about" label="About" />
+            <NavLinkItem to="/blog" label="Blog" />
             <NavLinkItem to="/contact" label="Contact" />
           </nav>
           <div className="nav-trailing">
@@ -279,6 +280,7 @@ export function Layout() {
                 <NavLinkItem to="/" label="Home" end drawer />
                 <NavLinkItem to="/services" label="Services" drawer />
                 <NavLinkItem to="/about" label="About" drawer />
+                <NavLinkItem to="/blog" label="Blog" drawer />
                 <NavLinkItem to="/contact" label="Contact" drawer />
                 <NavLinkItem to="/new-way-dry-cleaners-f10" label="New Way — F10" drawer />
                 <NavLinkItem to={getLocationPagePath(PW)} label="Pak Way — G15" drawer />
@@ -403,6 +405,9 @@ export function Layout() {
               <ul>
                 <li>
                   <Link to="/about">About us</Link>
+                </li>
+                <li>
+                  <Link to="/blog">Blog</Link>
                 </li>
                 <li>
                   <Link to="/contact">Contact</Link>

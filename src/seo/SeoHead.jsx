@@ -8,8 +8,10 @@ import { DEFAULT_LOCALE, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from './constan
  * @param {string} props.path Pathname only, e.g. `/` or `/services`
  * @param {string} [props.keywords] Optional meta keywords (legacy / other engines)
  * @param {string} [props.ogImage] Absolute image URL for OG/Twitter
+ * @param {'website' | 'article'} [props.ogType]
+ * @param {string} [props.publishedAt] ISO date for article:published_time
  */
-export function SeoHead({ title, description, path, keywords, ogImage }) {
+export function SeoHead({ title, description, path, keywords, ogImage, ogType = 'website', publishedAt }) {
   const normalizedPath = path === '/' ? '/' : path.replace(/\/$/, '') || '/';
   const canonical = `${SITE_URL}${normalizedPath === '/' ? '/' : normalizedPath}`;
   const image = ogImage || DEFAULT_OG_IMAGE;
@@ -23,7 +25,10 @@ export function SeoHead({ title, description, path, keywords, ogImage }) {
       {keywords ? <meta name="keywords" content={keywords} /> : null}
       <link rel="canonical" href={canonical} />
 
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
+      {ogType === 'article' && publishedAt ? (
+        <meta property="article:published_time" content={publishedAt} />
+      ) : null}
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />

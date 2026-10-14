@@ -60,7 +60,7 @@ export const MARKUP = `
         <li>Office wardrobes bundled with ironing add-ons</li>
       </ul>
       <p class="lede" style="margin-top:28px; max-width:60ch;">
-        Need storefront hours or same-day tweaks? Browse <a href="/contact">contact &amp; visit details</a>, see <a href="/laundry-near-me-islamabad">laundry near me</a>, or visit <a href="/pak-way-dry-cleaners-g15">Pak Way G15</a>. FAQ on our <a href="/">homepage</a>.
+        Need storefront hours or same-day tweaks? Browse <a href="/contact">contact &amp; visit details</a>, see <a href="/laundry-near-me-islamabad">laundry near me</a>, or read our <a href="/blog">laundry &amp; dry cleaning blog</a>. Visit <a href="/pak-way-dry-cleaners-g15">Pak Way G15</a> or FAQ on our <a href="/">homepage</a>.
       </p>
     </div>
   </section>
