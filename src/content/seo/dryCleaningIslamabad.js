@@ -35,7 +35,7 @@ export const MARKUP = `
             Households mixing dry-only pieces with baskets should pair this page’s service with our <a href="/laundry-service-islamabad">wash &amp; fold pickup</a> route. Searching <a href="/dry-cleaners-near-me-islamabad">dry cleaners near me</a>? We pick up across twin cities—mention your pin on WhatsApp so we consolidate delivery windows.
           </p>
           <p style="margin: 0;">
-            Freshly solvent-clean pieces often still need shaping — explore <a href="/ironing-service-islamabad">ironing-only pickup</a> if you launder delicate fabrics at home.
+            Freshly solvent-clean pieces often still need shaping — explore <a href="/ironing-service-islamabad">ironing-only pickup</a> if you launder delicate fabrics at home. Unsure which method suits a garment? Read <a href="/blog/dry-cleaning-vs-washing">dry cleaning vs washing</a>.
           </p>
         </div>
       </div>

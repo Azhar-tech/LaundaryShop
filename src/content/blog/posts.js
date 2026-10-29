@@ -2,10 +2,11 @@ import { post as washFold } from './postWashFoldVsLaundromatIslamabad.js';
 import { post as dryCleanSuits } from './postDryCleaningSuitsIslamabad.js';
 import { post as pickupAreas } from './postLaundryPickupAreasIslamabad.js';
 import { post as blanketOffer } from './postBlanketWashOfferIslamabad.js';
+import { post as dryCleaningVsWashing } from './postDryCleaningVsWashing.js';
 
 /** @typedef {typeof washFold} BlogPost */
 
-const ALL_POSTS = [washFold, dryCleanSuits, pickupAreas, blanketOffer];
+const ALL_POSTS = [washFold, dryCleanSuits, pickupAreas, blanketOffer, dryCleaningVsWashing];
 
 /** Newest first */
 export const BLOG_POSTS = [...ALL_POSTS].sort(

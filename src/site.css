@@ -1446,6 +1446,21 @@ a.nav-drawer-link.active {
   color: var(--ink-soft);
   line-height: 1.5;
 }
+.blog-hero-img {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  margin: 28px 0 0;
+}
+.blog-prose h3 {
+  font-size: clamp(18px, 2vw, 21px);
+  margin: 24px 0 8px;
+}
 .blog-offer-steps {
   padding-left: 1.25em;
   line-height: 1.75;

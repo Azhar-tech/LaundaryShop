@@ -1,9 +1,10 @@
 import { Link, useParams } from 'react-router-dom';
 import { PageContent } from '../PageContent.jsx';
 import { getPostBySlug } from '../content/blog/posts.js';
+import { buildRelatedPostsHtml } from '../content/blog/blogIndexMarkup.js';
 import { SeoHead } from '../seo/SeoHead.jsx';
 import { JsonLdScript } from '../seo/JsonLdScript.jsx';
-import { getArticleJsonLd } from '../seo/articleJsonLd.js';
+import { getArticleJsonLd, getBlogBreadcrumbJsonLd } from '../seo/articleJsonLd.js';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -34,14 +35,20 @@ export default function BlogPost() {
     <>
       <SeoHead
         title={post.title}
+        exactTitle={post.seoTitle}
         description={post.description}
         path={`/blog/${post.slug}`}
         keywords={post.keywords}
         ogType="article"
         publishedAt={post.publishedAt}
+        modifiedAt={post.updatedAt}
+        ogImage={post.image}
+        ogImageAlt={post.imageAlt}
       />
       <JsonLdScript id={`ld-article-${post.slug}`} json={getArticleJsonLd(post)} />
+      <JsonLdScript id={`ld-breadcrumb-${post.slug}`} json={getBlogBreadcrumbJsonLd(post)} />
       <PageContent html={post.html} />
+      <PageContent html={buildRelatedPostsHtml(post.slug)} />
     </>
   );
 }
