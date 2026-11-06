@@ -14,10 +14,8 @@ const PW = LOCATIONS.pakway;
 const dryImg = landingImg({
   src: '/dryCleaning.webp',
   alt: 'Dry cleaning rail at an Islamabad shop — suits and formal wear',
-  width: 2522,
-  height: 1664,
-  lazy: false,
-  priority: true,
+  width: 1600,
+  height: 1056,
 });
 
 const pressImg = landingImg({

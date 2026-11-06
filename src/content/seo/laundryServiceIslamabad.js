@@ -14,10 +14,8 @@ const PW = LOCATIONS.pakway;
 const washImg = landingImg({
   src: '/WashandFold.webp',
   alt: 'Wash-and-fold laundry stacked after pickup in Islamabad',
-  width: 2520,
-  height: 1664,
-  lazy: false,
-  priority: true,
+  width: 1600,
+  height: 1057,
 });
 
 const beddingImg = landingImg({

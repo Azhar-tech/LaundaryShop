@@ -16,16 +16,13 @@ const pressImg = landingImg({
   alt: 'Steam press and ironing of office shirts in Islamabad',
   width: 1536,
   height: 1024,
-  lazy: false,
-  priority: true,
 });
 
 const dryImg = landingImg({
   src: '/dryCleaning.webp',
   alt: 'Pressed garments on hangers after steam finishing',
-  width: 2522,
-  height: 1664,
-  lazy: true,
+  width: 1600,
+  height: 1056,
 });
 
 /** SEO landing: ironing / steam press Islamabad */

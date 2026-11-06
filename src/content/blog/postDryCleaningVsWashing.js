@@ -33,6 +33,7 @@ export const post = {
         width="1536"
         height="1024"
         fetchPriority="high"
+        loading="eager"
         decoding="async"
       />
     </div>

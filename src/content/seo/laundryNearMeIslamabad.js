@@ -14,10 +14,8 @@ const PW = LOCATIONS.pakway;
 const shopImg = landingImg({
   src: '/WashandFold.webp',
   alt: 'Wash-and-fold laundry from New Way F-10 and Pak Way G-15',
-  width: 2520,
-  height: 1664,
-  lazy: false,
-  priority: true,
+  width: 1600,
+  height: 1057,
 });
 
 const sofaImg = landingImg({
