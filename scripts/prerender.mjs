@@ -100,3 +100,6 @@ for (const routePath of routes) {
   fs.writeFileSync(dest, page);
   console.log(`prerender ${routePath} -> ${path.relative(root, dest)}`);
 }
+
+const { writeSitemap } = await import(pathToFileURL(path.join(root, 'scripts/write-sitemap.mjs')).href);
+writeSitemap();
