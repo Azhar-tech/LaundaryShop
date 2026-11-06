@@ -87,13 +87,9 @@ function NavLinkItem({ to, label, end, drawer = false }) {
   );
 }
 
-/** Tweaks panel is DEV-only and uses window/localStorage — mount after hydration. */
+/** Tweaks panel is DEV-only. Production builds DCE this branch. */
 function ClientOnlyTweaks() {
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    setReady(true);
-  }, []);
-  if (!import.meta.env.DEV || !DevSiteTweaks || !ready) return null;
+  if (!import.meta.env.DEV || !DevSiteTweaks) return null;
   return (
     <Suspense fallback={null}>
       <DevSiteTweaks />
