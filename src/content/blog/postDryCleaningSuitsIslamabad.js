@@ -6,6 +6,7 @@ const NW = LOCATIONS.newWay;
 export const post = {
   slug: 'how-often-dry-clean-suits-islamabad',
   title: 'How often should you dry clean suits in Islamabad?',
+  seoTitle: 'How Often to Dry Clean Suits | LaundryCare.pk',
   description:
     'Office wear in Islamabad’s dust and heat: when to dry clean suits and blazers, spot care between visits, and where to get reliable dry cleaning in F10.',
   keywords:

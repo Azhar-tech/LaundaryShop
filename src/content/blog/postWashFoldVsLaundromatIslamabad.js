@@ -3,6 +3,7 @@ import { blogBookCtaHtml } from './blogCta.js';
 export const post = {
   slug: 'wash-and-fold-vs-laundromat-islamabad',
   title: 'Wash & fold vs laundromat in Islamabad — which is better?',
+  seoTitle: 'Wash & Fold vs Laundromat | LaundryCare.pk',
   description:
     'Compare wash-and-fold pickup laundry with laundromats in Islamabad: time, cost, fabric care, and when free doorstep collection wins.',
   keywords:

@@ -7,6 +7,7 @@ const PW = LOCATIONS.pakway;
 export const post = {
   slug: 'blanket-wash-offer-5th-free-islamabad',
   title: 'Blanket wash offer — Rs 800 each, 5th blanket free in Islamabad',
+  seoTitle: 'Blanket Wash Offer Islamabad | LaundryCare.pk',
   description:
     'Wash blankets for Rs 800 each at LaundryCare.pk. Book five blankets in one order and the 5th wash is free — Rs 3,200 total. New Way F10 & Pak Way G15.',
   keywords:

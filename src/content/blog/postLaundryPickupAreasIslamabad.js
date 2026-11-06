@@ -7,6 +7,7 @@ const PW = LOCATIONS.pakway;
 export const post = {
   slug: 'laundry-pickup-areas-islamabad-f10-g15',
   title: 'Laundry pickup areas in Islamabad — F10, G15 & twin cities',
+  seoTitle: 'Laundry Pickup Areas Islamabad | LaundryCare.pk',
   description:
     'Which Islamabad and Rawalpindi neighbourhoods get free laundry pickup from LaundryCare.pk — New Way F10, Pak Way G15, Bahria, DHA, and nearby sectors.',
   keywords:

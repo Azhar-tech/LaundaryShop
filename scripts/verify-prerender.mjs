@@ -53,6 +53,9 @@ for (const routePath of routes) {
   if (!title) {
     console.error('  FAIL missing title');
     failed = true;
+  } else if ([...title].length > 60) {
+    console.error(`  FAIL title ${[...title].length} > 60: ${title}`);
+    failed = true;
   }
   if (titles.has(title)) {
     console.error(`  FAIL duplicate title (also ${titles.get(title)})`);

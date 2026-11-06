@@ -21,7 +21,7 @@ function entry(path, titleWithoutSuffix, description, extra = {}) {
 export const PAGE_META = {
   '/': entry(
     '/',
-    'Laundry & Dry Cleaning Islamabad',
+    'Free Pickup Laundry Islamabad',
     `Free pickup laundry and dry cleaning in Islamabad. New Way F-10 ${NW.hoursShort}, Pak Way G-15 ${PW.hoursShort} daily. 24h turnaround. WhatsApp ${NW.phoneDisplay}.`,
     { keywords: 'laundry Islamabad, dry cleaning Islamabad, New Way F10, Pak Way G15, laundry pickup Islamabad' },
   ),
@@ -69,7 +69,7 @@ export const PAGE_META = {
   ),
   '/dry-cleaning-islamabad': entry(
     '/dry-cleaning-islamabad',
-    'Dry Clean Suits, Sarees, Bridal',
+    'Dry Cleaners Islamabad',
     'Professional dry cleaning for suits, sarees and bridal wear in Islamabad. Hand-checked, solvent-cleaned and pressed. Free pickup, 24h standard.',
     { keywords: 'dry cleaning Islamabad, suits sarees bridal, LaundryCare.pk' },
   ),

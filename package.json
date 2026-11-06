@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "node scripts/assert-no-hardcoded-gbp.mjs && node scripts/assert-seo-copy.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/verify-prerender.mjs && node scripts/verify-jsonld.mjs",
     "optimize-images": "node scripts/optimize-images.mjs",
+    "test": "node scripts/assert-seo-copy.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

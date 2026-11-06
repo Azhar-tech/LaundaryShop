@@ -3,7 +3,7 @@ import { blogBookCtaHtml } from './blogCta.js';
 export const post = {
   slug: 'dry-cleaning-vs-washing',
   title: 'Dry Cleaning vs. Washing: Which Is Better for Your Clothes?',
-  seoTitle: 'Dry Cleaning vs. Washing: Which Is Better? | New Way Dry Cleaners',
+  seoTitle: 'Dry Cleaning vs Washing | LaundryCare.pk',
   description:
     'Learn the difference between dry cleaning and regular washing, discover which method suits your clothes, and find professional laundry services in Islamabad.',
   keywords:
