@@ -46,7 +46,7 @@ export const post = {
         <li>Wash &amp; fold, dry cleaning, steam press — or a mixed bag</li>
         <li>Return delivery in the slot you choose</li>
         <li>No minimum order in covered zones</li>
-        <li>Walk-in option 8am–10pm daily at either shop</li>
+        <li>Walk-in option: New Way 8am–11pm, Pak Way 8am–9pm, daily at either shop</li>
       </ul>
       <p>
         For service details see our <a href="/laundry-service-islamabad">laundry service page</a> and <a href="/contact">contact &amp; maps</a>. Not sure which shop is closer? Use <a href="/laundry-near-me-islamabad">laundry near me</a> tips or message both numbers — we will point you to the right rider.

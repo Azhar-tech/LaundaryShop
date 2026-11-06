@@ -5,6 +5,10 @@ import {
   processSectionHtml,
   quoteCtaHtml,
 } from '../../seo/landingHtml.js';
+import { LOCATIONS } from '../../seo/constants.js';
+
+const NW = LOCATIONS.newWay;
+const PW = LOCATIONS.pakway;
 
 const pressImg = landingImg({
   src: '/SteamPress.webp',
@@ -31,7 +35,7 @@ export const MARKUP = `
       <span class="eyebrow" style="margin-bottom:14px">Steam press Islamabad</span>
       <h1>Ironing &amp; steam press with free pickup in Islamabad</h1>
       <p class="lede">
-        Already washed at home but facing a backlog of shirts and kameez? Book ironing-only pickup. We finish office wear, uniforms and traditional sets on commercial steam presses, then return them on hangers. Walk in at F-10 or G-15, 8am–10pm.
+        Already washed at home but facing a backlog of shirts and kameez? Book ironing-only pickup. We finish office wear, uniforms and traditional sets on commercial steam presses, then return them on hangers. Walk in at F-10 (${NW.hoursShort}) or G-15 (${PW.hoursShort}).
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
         <a class="btn btn-primary" href="https://wa.me/923235557878" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
@@ -120,6 +124,6 @@ export const MARKUP = `
 
   ${quoteCtaHtml({
     heading: 'Send a shirt count. Get a press quote.',
-    text: 'Ironing-only or mixed with laundry — say which. Open 8am–10pm. New Way 0323 555 7878 · Pak Way 0349 596 3359.',
+    text: `Ironing-only or mixed with laundry — say which. New Way ${NW.hoursShort} · Pak Way ${PW.hoursShort}. New Way 0323 555 7878 · Pak Way 0349 596 3359.`,
   })}
 `;

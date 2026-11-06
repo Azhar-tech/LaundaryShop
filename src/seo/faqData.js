@@ -11,7 +11,7 @@ export const HOME_FAQ = [
   },
   {
     q: 'Can I book an online laundry service without visiting the shop?',
-    a: 'Yes. LaundryCare.pk is built for WhatsApp-first booking—send photos of your garments, confirm the quote, and we collect from your doorstep. Walk-ins welcome at New Way (F10 Idrees Market) or Pak Way (G15 Century Mall Plaza), 8am–10pm daily.',
+    a: `Yes. LaundryCare.pk is built for WhatsApp-first booking—send photos of your garments, confirm the quote, and we collect from your doorstep. Walk-ins welcome at New Way (F10 Idrees Market, ${NW.hoursShort}) or Pak Way (G15 Century Mall Plaza, ${PW.hoursShort}).`,
   },
   {
     q: 'How fast is dry cleaning and wash & fold in Islamabad?',
@@ -31,7 +31,7 @@ export const HOME_FAQ = [
   },
   {
     q: 'Is there a laundry shop near me in Islamabad?',
-    a: `Our shops are New Way (${NW.areaLabel}) and Pak Way (${PW.areaLabel})—both open 8am–10pm. Free pickup is available across covered areas; message the shop closest to you on WhatsApp.`,
+    a: `Our shops are New Way (${NW.areaLabel}, ${NW.hoursShort}) and Pak Way (${PW.areaLabel}, ${PW.hoursShort}). Free pickup is available across covered areas; message the shop closest to you on WhatsApp.`,
   },
   {
     q: 'Do you offer dhobi / laundry pickup near me?',
@@ -89,7 +89,7 @@ export const DRY_CLEANING_FAQ = [
   },
   {
     q: 'Can I walk in or do you only pick up?',
-    a: `Walk in at New Way (${NW.areaLabel}) or Pak Way (${PW.areaLabel}), 8am–10pm daily, or book free pickup if the shop is not on your route.`,
+    a: `Walk in at New Way (${NW.areaLabel}, ${NW.hoursShort}) or Pak Way (${PW.areaLabel}, ${PW.hoursShort}), or book free pickup if the shop is not on your route.`,
   },
   {
     q: 'Dry cleaning vs washing — how do I choose?',
@@ -127,7 +127,7 @@ export const IRONING_FAQ = [
 export const LAUNDRY_NEAR_ME_FAQ = [
   {
     q: 'Where can I find laundry near me in Islamabad?',
-    a: `Two shops: New Way at ${NW.fullAddress} and Pak Way at ${PW.fullAddress}. Both open 8am–10pm daily. Free doorstep pickup covers ${NW.pickupAreas} from New Way and ${PW.pickupAreas} from Pak Way.`,
+    a: `Two shops: New Way at ${NW.fullAddress} (${NW.hoursShort}) and Pak Way at ${PW.fullAddress} (${PW.hoursShort}). Free doorstep pickup covers ${NW.pickupAreas} from New Way and ${PW.pickupAreas} from Pak Way.`,
   },
   {
     q: 'Which shop should I choose — F-10 or G-15?',
@@ -143,7 +143,7 @@ export const LAUNDRY_NEAR_ME_FAQ = [
   },
   {
     q: 'What are the hours for laundry near me?',
-    a: 'Both New Way F-10 and Pak Way G-15 are open 8:00am–10:00pm every day, including Sundays, for walk-ins and for arranging pickup.',
+    a: `New Way F-10 is open ${NW.hoursShort} and Pak Way G-15 is open ${PW.hoursShort}, every day including Sundays, for walk-ins and for arranging pickup.`,
   },
   {
     q: 'How fast is laundry service near me?',
@@ -158,7 +158,7 @@ export const DRY_CLEANERS_NEAR_ME_FAQ = [
   },
   {
     q: 'What are the opening hours?',
-    a: 'Both shops are open 8:00am–10:00pm daily, including Sundays and public holidays, for walk-ins and pickup bookings.',
+    a: `New Way F-10 is open ${NW.hoursShort}; Pak Way G-15 is open ${PW.hoursShort}. Both welcome walk-ins and pickup bookings daily, including Sundays and public holidays.`,
   },
   {
     q: 'Can dry cleaners near me pick up suits and sarees?',

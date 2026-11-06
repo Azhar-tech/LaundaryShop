@@ -86,7 +86,7 @@ export const MARKUP = `
   ${processSectionHtml({
     eyebrow: 'How it works',
     heading: 'WhatsApp, pickup, clean, return on hangers',
-    lede: 'Walk-ins welcome at both shops, 8am–10pm. Pickup is free in covered areas with no minimum order.',
+    lede: 'Walk-ins welcome at both shops — New Way 8am–11pm, Pak Way 8am–9pm. Pickup is free in covered areas with no minimum order.',
     steps: [
       {
         title: 'WhatsApp a photo',

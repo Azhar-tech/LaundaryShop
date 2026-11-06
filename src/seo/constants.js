@@ -1,7 +1,7 @@
 /** Canonical public site (www, HTTPS, no trailing slash on paths). */
 export const SITE_URL = 'https://www.laundrycare.pk';
 
-/** TODO: paste a public itemised price list URL or path when ready. Landings use a WhatsApp quote until then. */
+/** Quotes are on WhatsApp. No public itemised price list. */
 export const PRICE_LIST_URL = '';
 
 export const LOGO_URL = `${SITE_URL}/logo.webp`;
@@ -12,12 +12,10 @@ export const DEFAULT_LOCALE = 'en_PK';
 /** Umbrella brand for header, og:site_name, and homepage meta. */
 export const SITE_NAME = 'LaundryCare.pk';
 
-export const HOURS_LABEL = 'Open 8:00am – 10:00pm, daily';
-
 /** Social profile URLs for footer links and schema sameAs. */
 export const SOCIAL_LINKS = {
   instagram: '', // TODO: paste Instagram profile URL
-  facebook: '', // TODO: paste Facebook page URL
+  facebook: 'https://www.facebook.com/profile.php?id=61555667625168',
 };
 
 const SHARED_ADDRESS = {
@@ -46,10 +44,18 @@ export const LOCATIONS = {
     fullAddress: 'F10/2 Idrees Market, Street 8, F-10, Islamabad, Pakistan (MXVX+VV3)',
     latitude: 33.693,
     longitude: 73.0135,
-    gbpUrl: '', // TODO: paste Google Business Profile / g.page URL
+    // Resolved from https://share.google/M6dLq8NO2iDwEZgZh (New Way F-10 listing)
+    gbpUrl:
+      'https://www.google.com/maps/place/New+Way+Dry+Cleaners+and+Steam+Press/@33.6949006,72.9994665,17z/data=!4m6!3m5!1s0x38dfbf5434d68ef5:0xc87be616ccd3ac10!8m2!3d33.6949006!4d72.9994665!16s%2Fg%2F11t71shhxb',
     sinceYear: 2001,
-    // TODO: confirm GBP stars + count; do not emit until set AND reviews are visible on the page
-    aggregateRating: null,
+    // GBP hours as of 2026-11-06: 8 AM–11 PM daily.
+    opens: '08:00',
+    closes: '23:00',
+    hoursShort: '8am–11pm',
+    hoursLabel: 'Open 8:00am – 11:00pm, daily',
+    hoursCard: 'Every day, 8:00am – 11:00pm',
+    // Live GBP as of 2026-11-06: 5.0★ from 5 reviews. Keep in sync with Maps.
+    aggregateRating: { ratingValue: '5.0', reviewCount: '5' },
     pickupAreas: 'F sectors, E-11, G-9, G-10, Bahria & DHA',
     ...SHARED_ADDRESS,
   },
@@ -69,9 +75,18 @@ export const LOCATIONS = {
     fullAddress: 'Shop 16, Basement Century Mall Plaza, G15 Markaz, Islamabad, Pakistan',
     latitude: 33.6338,
     longitude: 72.8765,
-    gbpUrl: '', // TODO: paste Google Business Profile / g.page URL
+    // Resolved from https://share.google/uYVJFS7qAQZcrUBlT (Pak Way G-15, Shop 16 Century Mall)
+    gbpUrl:
+      'https://www.google.com/maps/place/Pakway+Dry+Cleaners/@33.6338,72.8765,17z/data=!16s%2Fg%2F11wc8_fzg6',
     sinceYear: null,
-    aggregateRating: null,
+    // GBP hours as of 2026-11-06: open (from 8am, matching the listing) until 9 PM.
+    opens: '08:00',
+    closes: '21:00',
+    hoursShort: '8am–9pm',
+    hoursLabel: 'Open 8:00am – 9:00pm, daily',
+    hoursCard: 'Every day, 8:00am – 9:00pm',
+    // Live GBP as of 2026-11-06: 4.0★ from 5 reviews. Keep in sync with Maps.
+    aggregateRating: { ratingValue: '4.0', reviewCount: '5' },
     pickupAreas: 'G-13, G-14, G-15, G-16 and nearby sectors',
     ...SHARED_ADDRESS,
   },

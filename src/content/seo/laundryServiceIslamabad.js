@@ -53,7 +53,7 @@ export const MARKUP = `
             You never have to sit with a coin machine. Message <a href="/new-way-dry-cleaners-f10">New Way in F-10</a> or <a href="/pak-way-dry-cleaners-g15">Pak Way in G-15</a>, leave a bag for the rider, and get stacks back that go straight into a cupboard. If some pieces in the same pickup should not see water — a wool blazer, a beaded kameez — tell the rider. Those go to <a href="/dry-cleaning-islamabad">dry cleaning</a> instead of the washers.
           </p>
           <p style="margin-top:14px; font-size:16.5px; line-height:1.7;">
-            Office shirts in the basket can be finished on the steam press in the same turnaround. That is our <a href="/ironing-service-islamabad">ironing service</a>, not a surprise add-on sprung at the door. Say “press these” when you book. Rates are quoted on WhatsApp from a photo or a count of pieces — we do not publish a full price list here yet.
+            Office shirts in the basket can be finished on the steam press in the same turnaround. That is our <a href="/ironing-service-islamabad">ironing service</a>, not a surprise add-on sprung at the door. Say “press these” when you book. Rates are quoted on WhatsApp from a photo or a count of pieces — there is no public price list.
           </p>
         </div>
         <div class="svc-visual-card">${washImg}</div>

@@ -35,7 +35,7 @@ export const MARKUP = `
       <span class="eyebrow" style="margin-bottom:14px">Near you · Islamabad</span>
       <h1>Dry cleaners near you — F-10 Idrees Market and G-15</h1>
       <p class="lede">
-        Two dry cleaners in Islamabad: <strong>New Way</strong> at F-10/2 Idrees Market (${NW.phoneDisplay}) and <strong>Pak Way</strong> at Century Mall Plaza, G-15 (${PW.phoneDisplay}). Open 8am–10pm daily. Walk in, or book free pickup if the shop is not on your route.
+        Two dry cleaners in Islamabad: <strong>New Way</strong> at F-10/2 Idrees Market (${NW.phoneDisplay}) and <strong>Pak Way</strong> at Century Mall Plaza, G-15 (${PW.phoneDisplay}). New Way ${NW.hoursShort}, Pak Way ${PW.hoursShort}. Walk in, or book free pickup if the shop is not on your route.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
         <a class="btn btn-primary" href="https://wa.me/923235557878" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
@@ -57,14 +57,14 @@ export const MARKUP = `
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;">${NW.name}</h3>
           <p style="margin: 0 0 8px; line-height: 1.65;">${NW.fullAddress}</p>
-          <p style="margin: 0 0 8px; line-height: 1.65;">Open 8am–10pm daily · <a href="tel:${NW.phone}">${NW.phoneDisplay}</a></p>
+          <p style="margin: 0 0 8px; line-height: 1.65;">Open ${NW.hoursShort} daily · <a href="tel:${NW.phone}">${NW.phoneDisplay}</a></p>
           <p style="margin: 0 0 12px; line-height: 1.65;">Pickup: ${NW.pickupAreas}.</p>
           <p style="margin: 0;"><a href="/new-way-dry-cleaners-f10">Map, directions and shop details</a></p>
         </article>
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;">${PW.name}</h3>
           <p style="margin: 0 0 8px; line-height: 1.65;">${PW.fullAddress}</p>
-          <p style="margin: 0 0 8px; line-height: 1.65;">Open 8am–10pm daily · <a href="tel:${PW.phone}">${PW.phoneDisplay}</a></p>
+          <p style="margin: 0 0 8px; line-height: 1.65;">Open ${PW.hoursShort} daily · <a href="tel:${PW.phone}">${PW.phoneDisplay}</a></p>
           <p style="margin: 0 0 12px; line-height: 1.65;">Pickup: ${PW.pickupAreas}.</p>
           <p style="margin: 0;"><a href="/pak-way-dry-cleaners-g15">Map, directions and shop details</a></p>
         </article>
@@ -143,6 +143,6 @@ export const MARKUP = `
 
   ${quoteCtaHtml({
     heading: 'Dry cleaners near you — F-10 or G-15',
-    text: `Walk in 8am–10pm, or book pickup. New Way ${NW.phoneDisplay} · Pak Way ${PW.phoneDisplay}.`,
+    text: `Walk in at New Way ${NW.hoursShort} or Pak Way ${PW.hoursShort}, or book pickup. New Way ${NW.phoneDisplay} · Pak Way ${PW.phoneDisplay}.`,
   })}
 `;

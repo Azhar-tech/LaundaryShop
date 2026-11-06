@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import { HOURS_LABEL, LOCATIONS, SOCIAL_LINKS, getLocationPagePath } from './seo/constants.js';
+import { LOCATIONS, SOCIAL_LINKS, getLocationPagePath } from './seo/constants.js';
 
 const NW = LOCATIONS.newWay;
 const PW = LOCATIONS.pakway;
@@ -377,7 +377,7 @@ export function Layout() {
                 <li>
                   <a href={`tel:${NW.phone}`}>{NW.phoneDisplay}</a>
                 </li>
-                <li>{HOURS_LABEL}</li>
+                <li>{NW.hoursLabel}</li>
               </ul>
             </div>
             <div>
@@ -387,7 +387,7 @@ export function Layout() {
                 <li>
                   <a href={`tel:${PW.phone}`}>{PW.phoneDisplay}</a>
                 </li>
-                <li>{HOURS_LABEL}</li>
+                <li>{PW.hoursLabel}</li>
               </ul>
             </div>
           </div>

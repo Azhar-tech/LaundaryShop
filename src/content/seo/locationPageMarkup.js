@@ -1,5 +1,18 @@
 /** Build location page HTML from a LOCATIONS entry. */
 
+function googleRatingCard(loc) {
+  const rating = loc.aggregateRating;
+  if (!rating?.ratingValue || !rating?.reviewCount || !loc.gbpUrl) return '';
+  return `
+        <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
+          <h3 style="font-size: 18px; margin-bottom: 10px;">Google rating</h3>
+          <p style="margin: 0; line-height: 1.65;">
+            ${rating.ratingValue}&#9733; from ${rating.reviewCount} Google reviews<br/>
+            <a href="${loc.gbpUrl}" target="_blank" rel="noopener">See reviews on Google Maps</a>
+          </p>
+        </article>`;
+}
+
 /**
  * @param {object} loc — LOCATIONS.newWay | LOCATIONS.pakway
  * @param {object} other — the other shop
@@ -36,12 +49,12 @@ export function buildLocationMarkup(loc, other, urls) {
         </article>
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;">Hours</h3>
-          <p style="margin: 0; line-height: 1.65;">Every day, 8:00am – 10:00pm<br/>Including Sundays &amp; public holidays</p>
+          <p style="margin: 0; line-height: 1.65;">${loc.hoursCard}<br/>Including Sundays &amp; public holidays</p>
         </article>
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;">Pickup area</h3>
           <p style="margin: 0; line-height: 1.65;">Free pickup &amp; delivery: ${loc.pickupAreas}. No minimum order.</p>
-        </article>
+        </article>${googleRatingCard(loc)}
       </div>
     </div>
   </section>

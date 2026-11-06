@@ -35,7 +35,7 @@ export const MARKUP = `
       <span class="eyebrow" style="margin-bottom:14px">Near you · Islamabad</span>
       <h1>Laundry near you — New Way F-10 and Pak Way G-15</h1>
       <p class="lede">
-        Two laundry shops in Islamabad: <strong>New Way</strong> at F-10/2 Idrees Market and <strong>Pak Way</strong> at Century Mall Plaza, G-15 Markaz. Both open 8am–10pm daily. Walk in, or book free doorstep pickup for wash &amp; fold — no minimum order.
+        Two laundry shops in Islamabad: <strong>New Way</strong> at F-10/2 Idrees Market and <strong>Pak Way</strong> at Century Mall Plaza, G-15 Markaz. New Way ${NW.hoursShort}, Pak Way ${PW.hoursShort}. Walk in, or book free doorstep pickup for wash &amp; fold — no minimum order.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
         <a class="btn btn-primary" href="https://wa.me/923235557878" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
@@ -51,7 +51,7 @@ export const MARKUP = `
           <span class="eyebrow">Two counters</span>
           <h2>Pick a shop by map, or book the rider that already covers you</h2>
         </div>
-        <p class="lede" style="max-width:46ch">Walk-in hours are the same at both: 8:00am–10:00pm every day, including Sundays.</p>
+        <p class="lede" style="max-width:46ch">Walk-in hours: New Way ${NW.hoursShort}, Pak Way ${PW.hoursShort}, every day including Sundays.</p>
       </div>
       <div class="seo-cards-grid">
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
@@ -130,6 +130,6 @@ export const MARKUP = `
 
   ${quoteCtaHtml({
     heading: 'Laundry near you — message the closer shop',
-    text: `New Way F-10 ${NW.phoneDisplay} · Pak Way G-15 ${PW.phoneDisplay}. Open 8am–10pm daily. No minimum order on pickup.`,
+    text: `New Way F-10 ${NW.phoneDisplay} (${NW.hoursShort}) · Pak Way G-15 ${PW.phoneDisplay} (${PW.hoursShort}). No minimum order on pickup.`,
   })}
 `;

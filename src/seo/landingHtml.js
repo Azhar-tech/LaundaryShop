@@ -69,11 +69,11 @@ export function areasHtml({ heading, intro }) {
       <div class="seo-cards-grid">
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;"><a href="/new-way-dry-cleaners-f10">${NW.name}</a></h3>
-          <p style="margin: 0; line-height: 1.65;">${NW.areaLabel} · ${NW.phoneDisplay}<br/>Pickup: ${NW.pickupAreas}. Open 8am–10pm daily.</p>
+          <p style="margin: 0; line-height: 1.65;">${NW.areaLabel} · ${NW.phoneDisplay}<br/>Pickup: ${NW.pickupAreas}. Open ${NW.hoursShort} daily.</p>
         </article>
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;"><a href="/pak-way-dry-cleaners-g15">${PW.name}</a></h3>
-          <p style="margin: 0; line-height: 1.65;">${PW.areaLabel} · ${PW.phoneDisplay}<br/>Pickup: ${PW.pickupAreas}. Open 8am–10pm daily.</p>
+          <p style="margin: 0; line-height: 1.65;">${PW.areaLabel} · ${PW.phoneDisplay}<br/>Pickup: ${PW.pickupAreas}. Open ${PW.hoursShort} daily.</p>
         </article>
       </div>
     </div>

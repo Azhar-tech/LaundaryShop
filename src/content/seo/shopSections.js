@@ -50,7 +50,7 @@ const DUAL_SHOPS_SECTION = `
           <span class="eyebrow">Our shops</span>
           <h2>Visit New Way or Pak Way</h2>
         </div>
-        <p class="lede" style="max-width:42ch">Walk in 8am–10pm daily, or WhatsApp either shop for free pickup.</p>
+        <p class="lede" style="max-width:42ch">Walk in at New Way ${nw.hoursShort} or Pak Way ${pw.hoursShort}, or WhatsApp either shop for free pickup.</p>
       </div>
       <div class="shop-picker-grid">
         ${shopCard(nw)}
@@ -71,7 +71,7 @@ export function buildContactShopPanel(loc, panelId) {
     <div class="contact-shop-header">
       <span class="eyebrow">${loc.areaLabel}</span>
       <h2 style="margin-top:8px">${loc.name}</h2>
-      <p class="lede" style="margin-top:10px;font-size:15px">${loc.addressLine1} · ${loc.phoneDisplay}</p>
+      <p class="lede" style="margin-top:10px;font-size:15px">${loc.addressLine1} · ${loc.hoursShort} · ${loc.phoneDisplay}</p>
     </div>
     <div class="contact-split" style="margin-top:24px">
       <a href="${wa}" target="_blank" rel="noopener" class="contact-wa-card">

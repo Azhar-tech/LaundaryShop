@@ -65,8 +65,8 @@ for (const file of files) {
       continue;
     }
     const types = collectTypes(parsed);
-    if (types.includes('Review') || types.includes('AggregateRating')) {
-      console.error(`FAIL ${rel} emits ${types.filter((t) => t === 'Review' || t === 'AggregateRating').join(', ')}`);
+    if (types.includes('Review')) {
+      console.error(`FAIL ${rel} emits Review schema`);
       failed = true;
     }
   }

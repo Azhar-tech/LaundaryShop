@@ -42,7 +42,7 @@ export function getLocationJsonLd(locationId) {
     '@id': `${pageUrl}#localbusiness`,
     name: loc.name,
     alternateName: loc.alternateName,
-    description: `${loc.name} — laundry, dry cleaning and steam press at ${loc.areaLabel}, Islamabad. Book on WhatsApp or walk in daily 8am–10pm.`,
+    description: `${loc.name} — laundry, dry cleaning and steam press at ${loc.areaLabel}, Islamabad. Book on WhatsApp or walk in daily ${loc.hoursShort}.`,
     url: pageUrl,
     image: LOGO_URL,
     logo: LOGO_URL,
@@ -70,8 +70,8 @@ export function getLocationJsonLd(locationId) {
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: DAYS_ALL,
-        opens: '08:00',
-        closes: '22:00',
+        opens: loc.opens,
+        closes: loc.closes,
       },
     ],
     areaServed: [
@@ -141,6 +141,8 @@ export function getOrganizationJsonLd() {
       organization,
       ...locations.map((loc) => {
         const summary = getLocationJsonLd(loc.id);
+        // Keep AggregateRating on the shop page, where the Google score is shown.
+        delete summary.aggregateRating;
         return {
           ...summary,
           '@id': `${getLocationPageUrl(loc)}#localbusiness-summary`,
