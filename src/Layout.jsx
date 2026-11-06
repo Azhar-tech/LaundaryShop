@@ -420,6 +420,21 @@ export function Layout() {
                   <Link to="/blog">Blog</Link>
                 </li>
                 <li>
+                  <Link to="/blog/dry-cleaning-vs-washing">Dry cleaning vs washing</Link>
+                </li>
+                <li>
+                  <Link to="/blog/blanket-wash-offer-5th-free-islamabad">Blanket wash offer</Link>
+                </li>
+                <li>
+                  <Link to="/blog/wash-and-fold-vs-laundromat-islamabad">Wash &amp; fold vs laundromat</Link>
+                </li>
+                <li>
+                  <Link to="/blog/how-often-dry-clean-suits-islamabad">How often to dry clean suits</Link>
+                </li>
+                <li>
+                  <Link to="/blog/laundry-pickup-areas-islamabad-f10-g15">Pickup areas F10 &amp; G15</Link>
+                </li>
+                <li>
                   <Link to="/contact">Contact</Link>
                 </li>
                 <li>

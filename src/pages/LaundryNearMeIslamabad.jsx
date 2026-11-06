@@ -2,8 +2,19 @@ import { PageContent } from '../PageContent.jsx';
 import { MARKUP as MARKUP_RAW } from '../content/seo/laundryNearMeIslamabad.js';
 import { PageSeo } from '../seo/PageSeo.jsx';
 import { JsonLdScript } from '../seo/JsonLdScript.jsx';
-import { getFaqJsonLd, LAUNDRY_NEAR_ME_FAQ } from '../seo/faqData.js';
+import { LAUNDRY_NEAR_ME_FAQ } from '../seo/faqData.js';
 import { buildFaqSectionHtml } from '../seo/faqMarkup.js';
+import { getServicePageJsonLd } from '../seo/servicePageJsonLd.js';
+import { getPageMeta } from '../seo/pageMeta.js';
+
+const PATH = '/laundry-near-me-islamabad';
+const meta = getPageMeta(PATH);
+const ld = getServicePageJsonLd({
+  path: PATH,
+  name: 'Laundry near me',
+  description: meta.description,
+  faqs: LAUNDRY_NEAR_ME_FAQ,
+});
 
 const MARKUP = MARKUP_RAW.replace(
   '__FAQ__',
@@ -16,8 +27,10 @@ const MARKUP = MARKUP_RAW.replace(
 export default function LaundryNearMeIslamabad() {
   return (
     <>
-      <PageSeo path="/laundry-near-me-islamabad" />
-      <JsonLdScript id="ld-faq-laundry-near-me" json={getFaqJsonLd(LAUNDRY_NEAR_ME_FAQ)} />
+      <PageSeo path={PATH} />
+      <JsonLdScript id="ld-crumb-laundry-near-me" json={ld.breadcrumb} />
+      <JsonLdScript id="ld-faq-laundry-near-me" json={ld.faq} />
+      <JsonLdScript id="ld-service-laundry-near-me" json={ld.service} />
       <PageContent html={MARKUP} />
     </>
   );

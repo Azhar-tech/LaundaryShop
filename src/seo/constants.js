@@ -1,6 +1,9 @@
 /** Canonical public site (www, HTTPS, no trailing slash on paths). */
 export const SITE_URL = 'https://www.laundrycare.pk';
 
+/** TODO: paste a public itemised price list URL or path when ready. Landings use a WhatsApp quote until then. */
+export const PRICE_LIST_URL = '';
+
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
 
 export const DEFAULT_LOCALE = 'en_PK';

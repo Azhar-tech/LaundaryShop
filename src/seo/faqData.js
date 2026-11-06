@@ -43,41 +43,138 @@ export const HOME_FAQ = [
   },
 ];
 
+export const LAUNDRY_SERVICE_FAQ = [
+  {
+    q: 'What is included in wash-and-fold laundry?',
+    a: 'We sort by colour and fabric, wash, dry and fold everyday clothes, bedding and towels. You get stacks ready to put away. Ironing and dry cleaning can be added on the same pickup if you ask.',
+  },
+  {
+    q: 'How do I book laundry pickup in Islamabad?',
+    a: `WhatsApp New Way on ${NW.phoneDisplay} or Pak Way on ${PW.phoneDisplay}. Send your area, a time window, and a photo of the load if you want a quote first. There is no app to download.`,
+  },
+  {
+    q: 'Is there a minimum order for wash and fold?',
+    a: 'No minimum order. Pickup and delivery stay free in covered areas. Oversized sofas and carpets are quoted separately as home services.',
+  },
+  {
+    q: 'How long does wash and fold take?',
+    a: 'Most baskets return within 24 hours. Same-day is available for many everyday loads if you book early — ask when you message the shop.',
+  },
+  {
+    q: 'Do you wash blankets and razais?',
+    a: 'Yes. Seasonal blankets and razais go on a wash cycle suited to the fill. See the current blanket offer (Rs 800 each, 5th blanket free) on our blog, then WhatsApp a shop to book.',
+  },
+  {
+    q: 'Can I mix laundry with dry cleaning in one pickup?',
+    a: 'Yes. Tell the rider which pieces are wash-and-fold and which need solvent cleaning. We split the load at the shop so silk, wool and bridal pieces are not washed with tees.',
+  },
+];
+
+export const DRY_CLEANING_FAQ = [
+  {
+    q: 'Which clothes should be dry cleaned rather than washed?',
+    a: 'Suits, blazers, wool coats, silk, beaded sarees, lehengas, structured kameez and anything labelled “dry clean only”. If you are unsure, WhatsApp a photo before pickup.',
+  },
+  {
+    q: 'How does dry cleaning work at New Way and Pak Way?',
+    a: 'Each garment is hand-checked and spot-treated, then cleaned with solvent — not a home washer. It is pressed on commercial equipment and returned on a hanger in a protective cover.',
+  },
+  {
+    q: 'How long does dry cleaning take in Islamabad?',
+    a: 'Standard turnaround is about 24 hours for most suits and everyday dry-clean pieces. Bridal and heavily embellished items may need extra time; we confirm when you book.',
+  },
+  {
+    q: 'Do you dry clean bridal wear and sarees?',
+    a: 'Yes. Bridal lehengas, sarees, sherwanis and embroidered pieces are inspected for beads, sequins and lining before a solvent cycle. Same-day is not typical for bridal — ask for a realistic window.',
+  },
+  {
+    q: 'Can I walk in or do you only pick up?',
+    a: `Walk in at New Way (${NW.areaLabel}) or Pak Way (${PW.areaLabel}), 8am–10pm daily, or book free pickup if the shop is not on your route.`,
+  },
+  {
+    q: 'Dry cleaning vs washing — how do I choose?',
+    a: 'Water and detergent suit cotton tees, jeans and bedding. Solvent suits tailored and delicate pieces. Our guide on dry cleaning vs washing walks through common labels, or send a photo on WhatsApp.',
+  },
+];
+
+export const IRONING_FAQ = [
+  {
+    q: 'Can I book steam press without laundry?',
+    a: 'Yes. Ironing-only is for clothes you already washed. We pick up, press on commercial steam equipment, and return on hangers. No minimum order in covered areas.',
+  },
+  {
+    q: 'Which items do you iron in Islamabad?',
+    a: 'Office shirts and trousers, shalwar kameez, kurtas, uniforms, sarees, dupattas, abayas and many school pieces. Heavily beaded bridal is quoted separately so we do not crush embroidery.',
+  },
+  {
+    q: 'Do you pick up for ironing only?',
+    a: 'Yes. WhatsApp New Way or Pak Way, say “press only”, and choose a slot. The rider collects on hangers or in a bag and brings the same pieces back pressed.',
+  },
+  {
+    q: 'Is same-day ironing available?',
+    a: 'Same-day steam press is often available for office shirts and everyday sets if you book in the morning. Ask when you message — we will not promise a slot we cannot keep.',
+  },
+  {
+    q: 'Will you press clothes I washed at home?',
+    a: 'Yes. That is the usual ironing-only flow. Please send them dry and reasonably smooth so we can finish collars and creases properly.',
+  },
+  {
+    q: 'Can I combine ironing with wash and fold or dry cleaning?',
+    a: 'Yes. One pickup can include a wash basket, solvent pieces and press-only items. Label or tell the rider which pile is which.',
+  },
+];
+
 export const LAUNDRY_NEAR_ME_FAQ = [
   {
     q: 'Where can I find laundry near me in Islamabad?',
-    a: 'LaundryCare.pk serves Islamabad and Rawalpindi with free doorstep pickup from F10, F11, E11, G9, Bahria and DHA. Our F10/2 Idrees Market shop is also open daily 8am–10pm for walk-ins.',
+    a: `Two shops: New Way at ${NW.fullAddress} and Pak Way at ${PW.fullAddress}. Both open 8am–10pm daily. Free doorstep pickup covers ${NW.pickupAreas} from New Way and ${PW.pickupAreas} from Pak Way.`,
+  },
+  {
+    q: 'Which shop should I choose — F-10 or G-15?',
+    a: 'Pick the closer counter if you are walking in. For pickup, message the shop whose rider already covers your sector. Unsure? WhatsApp either shop with your pin and we will route it.',
   },
   {
     q: 'Do you replace a laundromat or laundry shop near me?',
-    a: 'Yes. Instead of hauling bags to a laundromat, book pickup on WhatsApp—we wash, fold and deliver back, usually within 24 hours, with no delivery charge in covered areas.',
+    a: 'You can still walk in. Most households skip the laundromat run: book pickup on WhatsApp, we wash and fold, and return the basket — usually within 24 hours, no minimum order.',
   },
   {
     q: 'Is laundry pickup near me free?',
-    a: 'Pickup and delivery are free across our service areas with no minimum order. Message us your pin on WhatsApp to confirm coverage before booking.',
+    a: 'Pickup and delivery are free in covered areas with no minimum order. Message your pin on WhatsApp so we confirm the route before the rider leaves.',
   },
   {
-    q: 'How fast is laundry service near me in Islamabad?',
-    a: 'Most wash-and-fold baskets return within 24 hours. Same-day options exist for many everyday loads—ask when you book your slot.',
+    q: 'What are the hours for laundry near me?',
+    a: 'Both New Way F-10 and Pak Way G-15 are open 8:00am–10:00pm every day, including Sundays, for walk-ins and for arranging pickup.',
+  },
+  {
+    q: 'How fast is laundry service near me?',
+    a: 'Most wash-and-fold baskets return within 24 hours. Same-day is available on many everyday loads if you book early — ask the shop when you lock the slot.',
   },
 ];
 
 export const DRY_CLEANERS_NEAR_ME_FAQ = [
   {
     q: 'Where are dry cleaners near me in Islamabad?',
-    a: `New Way Dry Cleaners is at ${NW.fullAddress}. Pak Way Dry Cleaners is at ${PW.fullAddress}. We also offer free pickup across Islamabad and Rawalpindi if visiting a shop is not convenient.`,
+    a: `New Way Dry Cleaners is at ${NW.fullAddress}. Pak Way Dry Cleaners is at ${PW.fullAddress}. Maps and directions are on each shop page. Free pickup if visiting is not convenient.`,
+  },
+  {
+    q: 'What are the opening hours?',
+    a: 'Both shops are open 8:00am–10:00pm daily, including Sundays and public holidays, for walk-ins and pickup bookings.',
   },
   {
     q: 'Can dry cleaners near me pick up suits and sarees?',
-    a: 'Yes. We collect suits, sarees, bridal wear, coats and delicate fabrics from your door, dry-clean at our F10 facility, and return on hangers in protective covers.',
+    a: 'Yes. We collect suits, sarees, bridal wear, coats and delicate fabrics from your door, dry-clean them, and return them on hangers in protective covers.',
   },
   {
-    q: 'How fast are dry cleaners near me in Islamabad?',
-    a: 'Standard dry cleaning turnaround is about 24 hours for most garments. Bridal and heavily embellished pieces may take longer—we confirm timing when you book.',
+    q: 'How fast are dry cleaners near me?',
+    a: 'Standard dry cleaning is about 24 hours for most garments. Bridal and heavily embellished pieces may take longer — we confirm timing when you book.',
   },
   {
-    q: 'Are dry cleaners near me open on Sundays?',
-    a: 'Yes. We are open every day from 8:00am to 10:00pm, including Sundays and public holidays, for both walk-ins and pickup bookings.',
+    q: 'Do I need an appointment to walk in?',
+    a: 'No appointment for drop-off. Walk in at F-10 Idrees Market or G-15 Century Mall Plaza during open hours. Pickup still needs a WhatsApp slot so the rider is not guessing your time.',
+  },
+  {
+    q: 'Which shop covers my sector for pickup?',
+    a: `New Way riders cover ${NW.pickupAreas}. Pak Way riders cover ${PW.pickupAreas}. Send your pin if you live between the two — we will assign the closer route.`,
   },
 ];
 
