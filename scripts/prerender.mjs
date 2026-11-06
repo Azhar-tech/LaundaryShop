@@ -68,7 +68,7 @@ const template = fs.readFileSync(templatePath, 'utf8');
 const extra = process.env.PRERENDER_EXTRA_PATHS
   ? process.env.PRERENDER_EXTRA_PATHS.split(',').filter(Boolean)
   : [];
-const routes = [...getPrerenderPaths(), ...extra];
+const routes = [...getPrerenderPaths(), '/404', ...extra];
 
 for (const routePath of routes) {
   const { html, helmet } = render(routePath);

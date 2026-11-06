@@ -1,15 +1,24 @@
-{
-  "redirects": [
-    {
-      "source": "/pakway-dry-cleaners-g15",
-      "destination": "/pak-way-dry-cleaners-g15",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/pakway-dry-cleaners-g15",
+      "destination": "/pak-way-dry-cleaners-g15",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "laundary-shop.vercel.app" }],
+      "destination": "https://www.laundrycare.pk/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "(.*)\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    }
+  ]
+}

@@ -13,6 +13,7 @@ import NewWayLocation from './pages/NewWayLocation.jsx';
 import PakwayLocation from './pages/PakwayLocation.jsx';
 import Blog from './pages/Blog.jsx';
 import BlogPost from './pages/BlogPost.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 export default function App() {
   return (
@@ -31,6 +32,8 @@ export default function App() {
         <Route path="/ironing-service-islamabad" element={<IroningServiceIslamabad />} />
         <Route path="/laundry-near-me-islamabad" element={<LaundryNearMeIslamabad />} />
         <Route path="/dry-cleaners-near-me-islamabad" element={<DryCleanersNearMeIslamabad />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

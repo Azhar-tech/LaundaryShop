@@ -24,7 +24,7 @@ function extract(html, re) {
 const extra = process.env.PRERENDER_EXTRA_PATHS
   ? process.env.PRERENDER_EXTRA_PATHS.split(',').filter(Boolean)
   : [];
-const routes = [...getPrerenderPaths(), ...extra];
+const routes = [...getPrerenderPaths(), '/404', ...extra];
 const titles = new Map();
 let failed = false;
 
