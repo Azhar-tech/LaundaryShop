@@ -44,6 +44,27 @@ function collectTypes(node, acc = []) {
   return acc;
 }
 
+function collectAggregateRatings(node, acc = []) {
+  if (!node || typeof node !== 'object') return acc;
+  if (Array.isArray(node)) {
+    node.forEach((item) => collectAggregateRatings(item, acc));
+    return acc;
+  }
+  const types = node['@type']
+    ? Array.isArray(node['@type'])
+      ? node['@type']
+      : [node['@type']]
+    : [];
+  if (types.includes('AggregateRating') || node.aggregateRating) {
+    const rating = types.includes('AggregateRating') ? node : node.aggregateRating;
+    if (rating?.ratingValue && rating?.reviewCount) acc.push(rating);
+  }
+  for (const value of Object.values(node)) {
+    if (value && typeof value === 'object') collectAggregateRatings(value, acc);
+  }
+  return acc;
+}
+
 const files = walkHtmlFiles(distDir);
 let failed = false;
 let blocks = 0;
@@ -68,6 +89,15 @@ for (const file of files) {
     if (types.includes('Review')) {
       console.error(`FAIL ${rel} emits Review schema`);
       failed = true;
+    }
+    for (const rating of collectAggregateRatings(parsed)) {
+      const visible = `${rating.reviewCount} Google reviews`;
+      if (!html.includes(String(rating.ratingValue)) || !html.includes(visible)) {
+        console.error(
+          `FAIL ${rel} AggregateRating ${rating.ratingValue}/${rating.reviewCount} is not shown as "${visible}"`,
+        );
+        failed = true;
+      }
     }
   }
 }

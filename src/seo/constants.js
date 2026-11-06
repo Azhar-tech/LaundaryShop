@@ -115,6 +115,7 @@ export const LOCATIONS = {
     opens: '08:00',
     closes: '21:00',
     ...PAK_WAY_HOURS,
+    // TODO: confirm against GBP
     aggregateRating: { ratingValue: '4.0', reviewCount: '5' },
     pickupAreas: 'G-13, G-14, G-15, G-16 and nearby sectors',
     ...SHARED_ADDRESS,
@@ -129,6 +130,13 @@ export function getLocation(locationId) {
 /** Spoken hours (e.g. compact opens–closes) derived from the shop's opens/closes. */
 export function hoursToWords(loc) {
   return loc.hoursShort.replace('–', ' to ');
+}
+
+/** Visible Google score, or null when it must not appear in copy or schema. */
+export function getGoogleRating(loc) {
+  const rating = loc.aggregateRating;
+  if (!rating?.ratingValue || !rating?.reviewCount) return null;
+  return rating;
 }
 
 /** @param {import('./constants.js').LOCATIONS.newWay} loc */

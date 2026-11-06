@@ -4,6 +4,7 @@ import {
   SITE_NAME,
   SITE_URL,
   SOCIAL_LINKS,
+  getGoogleRating,
   getLocationPageUrl,
 } from './constants.js';
 
@@ -126,11 +127,12 @@ export function getLocationJsonLd(locationId) {
   const sameAs = getSameAsUrls(loc);
   if (sameAs) node.sameAs = sameAs;
   if (loc.gbpUrl) node.hasMap = loc.gbpUrl;
-  if (loc.aggregateRating?.ratingValue && loc.aggregateRating?.reviewCount) {
+  const googleRating = getGoogleRating(loc);
+  if (googleRating) {
     node.aggregateRating = {
       '@type': 'AggregateRating',
-      ratingValue: loc.aggregateRating.ratingValue,
-      reviewCount: loc.aggregateRating.reviewCount,
+      ratingValue: googleRating.ratingValue,
+      reviewCount: googleRating.reviewCount,
       bestRating: '5',
       worstRating: '1',
     };

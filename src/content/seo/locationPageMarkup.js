@@ -1,8 +1,10 @@
+import { getGoogleRating } from '../../seo/constants.js';
+
 /** Build location page HTML from a LOCATIONS entry. */
 
 function googleRatingCard(loc) {
-  const rating = loc.aggregateRating;
-  if (!rating?.ratingValue || !rating?.reviewCount) return '';
+  const rating = getGoogleRating(loc);
+  if (!rating) return '';
   const mapsLink = loc.gbpUrl
     ? `<br/><a href="${loc.gbpUrl}" target="_blank" rel="noopener">See reviews on Google Maps</a>`
     : '';
