@@ -15,8 +15,8 @@ export const HOURS_LABEL = 'Open 8:00am – 10:00pm, daily';
 
 /** Social profile URLs for footer links and schema sameAs. */
 export const SOCIAL_LINKS = {
-  instagram: '',
-  facebook: '',
+  instagram: '', // TODO: paste Instagram profile URL
+  facebook: '', // TODO: paste Facebook page URL
 };
 
 const SHARED_ADDRESS = {
@@ -45,9 +45,10 @@ export const LOCATIONS = {
     fullAddress: 'F10/2 Idrees Market, Street 8, F-10, Islamabad, Pakistan (MXVX+VV3)',
     latitude: 33.693,
     longitude: 73.0135,
-    gbpUrl: '',
+    gbpUrl: '', // TODO: paste Google Business Profile / g.page URL
     sinceYear: 2001,
-    aggregateRating: { ratingValue: '4.9', reviewCount: '800' },
+    // TODO: confirm GBP stars + count; do not emit until set AND reviews are visible on the page
+    aggregateRating: null,
     pickupAreas: 'F sectors, E-11, G-9, G-10, Bahria & DHA',
     ...SHARED_ADDRESS,
   },
@@ -59,7 +60,7 @@ export const LOCATIONS = {
     phone: '+923495963359',
     phoneDisplay: '0349 596 3359',
     whatsappText: 'Hi Pak Way, I would like to book a pickup.',
-    plusCode: '',
+    plusCode: '', // TODO: paste Pak Way plus code when confirmed
     streetAddress: 'Shop 16, Basement Century Mall Plaza, G15 Markaz',
     areaLabel: 'G15 Markaz',
     addressLine1: 'Shop 16, Basement Century Mall Plaza',
@@ -67,7 +68,7 @@ export const LOCATIONS = {
     fullAddress: 'Shop 16, Basement Century Mall Plaza, G15 Markaz, Islamabad, Pakistan',
     latitude: 33.6338,
     longitude: 72.8765,
-    gbpUrl: '',
+    gbpUrl: '', // TODO: paste Google Business Profile / g.page URL
     sinceYear: null,
     aggregateRating: null,
     pickupAreas: 'G-13, G-14, G-15, G-16 and nearby sectors',

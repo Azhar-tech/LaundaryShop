@@ -4,7 +4,6 @@ import {
   SITE_NAME,
   SITE_URL,
   SOCIAL_LINKS,
-  getLocationMapsSearchUrl,
   getLocationPageUrl,
 } from './constants.js';
 
@@ -35,7 +34,6 @@ function getSameAsUrls(gbpUrl) {
 export function getLocationJsonLd(locationId) {
   const loc = LOCATIONS[locationId];
   const pageUrl = getLocationPageUrl(loc);
-  const mapsUrl = getLocationMapsSearchUrl(loc);
 
   const node = {
     '@context': 'https://schema.org',
@@ -50,8 +48,6 @@ export function getLocationJsonLd(locationId) {
     logo: DEFAULT_OG_IMAGE,
     telephone: loc.phone,
     priceRange: '$$',
-    hasMap: mapsUrl,
-    sameAs: getSameAsUrls(loc.gbpUrl || mapsUrl),
     parentOrganization: {
       '@type': 'Organization',
       name: SITE_NAME,
@@ -97,7 +93,10 @@ export function getLocationJsonLd(locationId) {
     },
   };
 
-  if (loc.aggregateRating) {
+  const sameAs = getSameAsUrls(loc.gbpUrl);
+  if (sameAs) node.sameAs = sameAs;
+  if (loc.gbpUrl) node.hasMap = loc.gbpUrl;
+  if (loc.aggregateRating?.ratingValue && loc.aggregateRating?.reviewCount) {
     node.aggregateRating = {
       '@type': 'AggregateRating',
       ratingValue: loc.aggregateRating.ratingValue,
@@ -114,29 +113,32 @@ export function getLocationJsonLd(locationId) {
 export function getOrganizationJsonLd() {
   const locations = Object.values(LOCATIONS);
 
+  const organization = {
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: DEFAULT_OG_IMAGE,
+    subOrganization: locations.map((loc) => ({
+      '@type': 'LocalBusiness',
+      name: loc.name,
+      url: getLocationPageUrl(loc),
+      telephone: loc.phone,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: loc.streetAddress,
+        addressLocality: loc.addressLocality,
+        addressCountry: loc.addressCountry,
+      },
+    })),
+  };
+  const orgSameAs = [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook].filter(Boolean);
+  if (orgSameAs.length) organization.sameAs = orgSameAs;
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': `${SITE_URL}/#organization`,
-        name: SITE_NAME,
-        url: SITE_URL,
-        logo: DEFAULT_OG_IMAGE,
-        sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook].filter(Boolean),
-        subOrganization: locations.map((loc) => ({
-          '@type': 'LocalBusiness',
-          name: loc.name,
-          url: getLocationPageUrl(loc),
-          telephone: loc.phone,
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: loc.streetAddress,
-            addressLocality: loc.addressLocality,
-            addressCountry: loc.addressCountry,
-          },
-        })),
-      },
+      organization,
       ...locations.map((loc) => {
         const summary = getLocationJsonLd(loc.id);
         return {
