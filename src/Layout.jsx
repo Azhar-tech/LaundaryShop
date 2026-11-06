@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { LOCATIONS, SOCIAL_LINKS, getLocationPagePath, getWhatsAppUrl } from './seo/constants.js';
+import { useAnalytics } from './analytics.js';
 
 const NW = LOCATIONS.newWay;
 const PW = LOCATIONS.pakway;
@@ -100,6 +101,7 @@ function ClientOnlyTweaks() {
 export function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  useAnalytics();
 
   useEffect(() => {
     queueMicrotask(() => {
@@ -393,7 +395,7 @@ export function Layout() {
           </div>
           <div className="foot-bot">
             <span>© {new Date().getFullYear()} LaundryCare.pk — New Way &amp; Pak Way Dry Cleaners.</span>
-            <span>Made with care in Islamabad</span>
+            <span>We use anonymous analytics to improve this site.</span>
           </div>
         </div>
       </footer>

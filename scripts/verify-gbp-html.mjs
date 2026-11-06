@@ -92,4 +92,52 @@ const contact = read('/contact');
 mustInclude(contact, '/contact', [NW.phoneDisplay, NW.phoneSecondaryDisplay, PW.phoneDisplay]);
 mustNotInclude(contact, '/contact', forbiddenLegacy);
 
+function walkHtmlFiles(dir, acc = []) {
+  for (const name of fs.readdirSync(dir)) {
+    const full = path.join(dir, name);
+    const stat = fs.statSync(full);
+    if (stat.isDirectory()) walkHtmlFiles(full, acc);
+    else if (name === 'index.html' || name === '404.html') acc.push(full);
+  }
+  return acc;
+}
+
+function allowedPhoneDigits() {
+  const set = new Set();
+  for (const loc of Object.values(LOCATIONS)) {
+    for (const raw of [loc.phone, loc.phoneSecondary, loc.phoneDisplay, loc.phoneSecondaryDisplay]) {
+      const d = String(raw || '').replace(/\D/g, '');
+      if (!d) continue;
+      set.add(d);
+      if (d.startsWith('92') && d.length > 2) set.add(`0${d.slice(2)}`);
+      if (d.startsWith('0') && d.length > 1) set.add(`92${d.slice(1)}`);
+    }
+  }
+  return set;
+}
+
+const allowed = allowedPhoneDigits();
+const telRe = /href=["']tel:([^"']+)["']/gi;
+const waRe = /href=["']https?:\/\/wa\.me\/(\d+)/gi;
+let linkFailed = false;
+
+for (const file of walkHtmlFiles(distDir)) {
+  const html = fs.readFileSync(file, 'utf8');
+  const rel = path.relative(root, file);
+  for (const re of [telRe, waRe]) {
+    re.lastIndex = 0;
+    let match;
+    while ((match = re.exec(html))) {
+      const d = match[1].replace(/\D/g, '');
+      if (!d || allowed.has(d)) continue;
+      console.error(`${rel}: ${match[0]} is not a LOCATIONS number`);
+      linkFailed = true;
+    }
+  }
+}
+
+if (linkFailed) {
+  throw new Error('verify-gbp-html: tel:/wa.me link used a number not in constants.js');
+}
+
 console.log('verify-gbp-html: ok');
