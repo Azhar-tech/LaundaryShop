@@ -20,6 +20,114 @@ function extraPhoneLine(loc) {
   return `<br/><a href="tel:${loc.phoneSecondary}">${loc.phoneSecondaryDisplay}</a>`;
 }
 
+function shopGuideHtml(loc, other) {
+  if (loc.id === 'newWay') {
+    return `
+      <div class="blog-prose" style="margin-top:36px; max-width:72ch;">
+        <h2>How to find New Way at Idrees Market</h2>
+        <p>
+          The shop is <strong>${loc.gbpName}</strong>, a dry cleaner and laundry at
+          ${loc.streetAddress}, Islamabad. On Google Maps the pin sits at plus code
+          ${loc.plusCode}. Street 8 runs through F10/2 Idrees Market — walk to the counter,
+          or tap Get directions on this page. We are open ${loc.hoursShort}, Monday to Sunday.
+        </p>
+        <p>
+          Call or WhatsApp <a href="tel:${loc.phone}">${loc.phoneDisplay}</a>
+          ${loc.phoneSecondary ? ` or <a href="tel:${loc.phoneSecondary}">${loc.phoneSecondaryDisplay}</a>` : ''}
+          if you want a rider instead of a walk-in. Quotes stay on WhatsApp; there is no public price list.
+          ${loc.sinceYear ? `This F-10 counter has been serving the market since ${loc.sinceYear}.` : ''}
+        </p>
+        <h2>Services at this F-10 shop</h2>
+        <p>
+          Bring solvent work — suits, blazers, wool coats, silk, beaded sarees, lehengas and structured kameez —
+          for dry cleaning. Everyday bags go through wash and fold: sorted by colour, washed, dried and stacked.
+          Already-clean office shirts and kameez can be steam-pressed only. Sofa and carpet jobs are quoted from a
+          photo on WhatsApp. The same five services are listed on our
+          <a href="/services">services page</a>,
+          <a href="/dry-cleaning-islamabad">dry cleaning</a>,
+          <a href="/laundry-service-islamabad">wash &amp; fold pickup</a> and
+          <a href="/ironing-service-islamabad">ironing</a> landings.
+        </p>
+        <h2>Pickup areas from New Way</h2>
+        <p>
+          Free pickup and delivery from this shop covers ${loc.pickupAreas}. No minimum order in those zones.
+          If you are choosing a shop by sector, read
+          <a href="/blog/laundry-pickup-areas-islamabad-f10-g15">laundry pickup areas in Islamabad — F10, G15 and the twin cities</a>
+          and the
+          <a href="/dry-cleaners-near-me-islamabad">dry cleaners near me</a> map of both counters.
+          Households that want a doorstep wash rather than a walk-in can start on
+          <a href="/laundry-near-me-islamabad">laundry near me in Islamabad</a>.
+        </p>
+        <p>
+          Suit rotation in Islamabad dust is covered in
+          <a href="/blog/how-often-dry-clean-suits-islamabad">how often to dry clean suits</a>.
+          Care labels and washer vs solvent are in
+          <a href="/blog/dry-cleaning-vs-washing">dry cleaning vs washing</a>.
+          Pickup vs a self-service hall is
+          <a href="/blog/wash-and-fold-vs-laundromat-islamabad">wash &amp; fold vs a laundromat</a>.
+          Seasonal blankets use the published
+          <a href="/blog/blanket-wash-offer-5th-free-islamabad">blanket wash offer</a> at this counter too.
+        </p>
+        <p>
+          Our other shop is <a href="/${other.slug}">${other.name}</a> at ${other.areaLabel}
+          (${other.phoneDisplay}) — same services, a different doorstep route for G-13 to G-16.
+        </p>
+      </div>`;
+  }
+
+  return `
+      <div class="blog-prose" style="margin-top:36px; max-width:72ch;">
+        <h2>How to find Pak Way at Century Mall Plaza</h2>
+        <p>
+          Pak Way Dry Cleaners is at ${loc.fullAddress}. Shop 16 is in the basement of Century Mall Plaza
+          at G15 Markaz. Walk in during ${loc.hoursShort}, every day, or WhatsApp
+          <a href="tel:${loc.phone}">${loc.phoneDisplay}</a> and a rider will collect from your door.
+          Quotes stay on WhatsApp; there is no public price list.
+        </p>
+        <p>
+          If you are comparing counters, New Way sits in F-10 Idrees Market;
+          this page is the G-15 walk-in. Directions on this page use the shop coordinates we publish —
+          send the pin on WhatsApp if you want the rider to meet you at a gate.
+        </p>
+        <h2>Services at this G-15 shop</h2>
+        <p>
+          Drop off dry cleaning, wash-and-fold laundry, steam press, or ask for a sofa or carpet quote.
+          Suits, sarees, bridal pieces and coats are collected here the same way they are at New Way.
+          Service detail lives on
+          <a href="/services">all services</a>,
+          <a href="/dry-cleaning-islamabad">dry cleaning</a>,
+          <a href="/laundry-service-islamabad">laundry pickup</a> and
+          <a href="/ironing-service-islamabad">ironing</a>.
+        </p>
+        <h2>Pickup areas from Pak Way</h2>
+        <p>
+          Riders from this basement counter cover ${loc.pickupAreas}. Pickup and delivery are free, with no
+          minimum order in those zones. West Islamabad households often use G-15 as the closer shop;
+          F-sector, E-11, Bahria and DHA routes usually run from New Way. Confirm your pin when you book —
+          we will not guess a street that is outside the published areas.
+        </p>
+        <p>
+          Neighbourhood split is written up in
+          <a href="/blog/laundry-pickup-areas-islamabad-f10-g15">laundry pickup areas — F10, G15 and the twin cities</a>.
+          Finding a counter on the map: <a href="/laundry-near-me-islamabad">laundry near me</a> and
+          <a href="/dry-cleaners-near-me-islamabad">dry cleaners near me</a>.
+          Suit frequency,
+          <a href="/blog/how-often-dry-clean-suits-islamabad">how often to dry clean suits</a>;
+          fabric choice,
+          <a href="/blog/dry-cleaning-vs-washing">dry cleaning vs washing</a>;
+          pickup vs machines,
+          <a href="/blog/wash-and-fold-vs-laundromat-islamabad">wash &amp; fold vs a laundromat</a>;
+          and the
+          <a href="/blog/blanket-wash-offer-5th-free-islamabad">blanket wash offer</a>
+          all apply at Pak Way as well.
+        </p>
+        <p>
+          Our other shop is <a href="/${other.slug}">${other.name}</a> at ${other.areaLabel}
+          (${other.phoneDisplay}).
+        </p>
+      </div>`;
+}
+
 /**
  * @param {object} loc — LOCATIONS.newWay | LOCATIONS.pakway
  * @param {object} other — the other shop
@@ -33,6 +141,7 @@ export function buildLocationMarkup(loc, other, urls) {
   return `
   <section class="page-hero">
     <div class="container">
+      <nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> → <span>${loc.name}</span></nav>
       <span class="eyebrow" style="margin-bottom:14px">${loc.areaLabel}</span>
       <h1>${loc.name} — ${loc.areaLabel}, Islamabad</h1>
       <p class="lede">
@@ -56,7 +165,7 @@ export function buildLocationMarkup(loc, other, urls) {
         </article>
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;">Hours</h3>
-          <p style="margin: 0; line-height: 1.65;">${loc.hoursCard}<br/>Including Sundays &amp; public holidays</p>
+          <p style="margin: 0; line-height: 1.65;">${loc.hoursCard}<br/>Monday to Sunday</p>
         </article>
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;">Pickup area</h3>
@@ -80,9 +189,7 @@ export function buildLocationMarkup(loc, other, urls) {
         <li>Steam press &amp; ironing — office wear and traditional outfits</li>
         <li>Sofa &amp; carpet care — quote on WhatsApp</li>
       </ul>
-      <p class="lede" style="margin-top:28px; max-width:60ch;">
-        Browse <a href="/services">all services</a>, <a href="/laundry-service-islamabad">laundry pickup</a>, <a href="/dry-cleaning-islamabad">dry cleaning</a>, or <a href="/contact#book">contact both shops</a>.
-      </p>
+      ${shopGuideHtml(loc, other)}
     </div>
   </section>
 
@@ -118,6 +225,8 @@ export function buildLocationMarkup(loc, other, urls) {
       </div>
     </div>
   </section>
+
+  __FAQ__
 
   <section style="padding: 0 0 96px;">
     <div class="container">

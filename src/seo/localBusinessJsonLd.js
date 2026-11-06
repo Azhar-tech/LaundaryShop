@@ -182,6 +182,20 @@ export function getOrganizationJsonLd() {
   };
 }
 
+/** Home > shop page breadcrumb. */
+export function getLocationBreadcrumbJsonLd(locationId) {
+  const loc = LOCATIONS[locationId];
+  const pageUrl = getLocationPageUrl(loc);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: loc.name, item: pageUrl },
+    ],
+  };
+}
+
 /** @deprecated Use getLocationJsonLd('newWay') or getOrganizationJsonLd */
 export function getLocalBusinessJsonLd() {
   return getLocationJsonLd('newWay');

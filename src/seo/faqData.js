@@ -178,6 +178,52 @@ export const DRY_CLEANERS_NEAR_ME_FAQ = [
   },
 ];
 
+export const NEW_WAY_FAQ = [
+  {
+    q: 'Where is New Way Dry Cleaners in F-10?',
+    a: `New Way Dry Cleaners and Steam Press is at ${NW.fullAddress}. Use plus code ${NW.plusCode} in Google Maps, or open directions from this shop page.`,
+  },
+  {
+    q: 'What are New Way’s opening hours?',
+    a: `The F-10 shop is open ${NW.hoursShort}, Monday to Sunday. Walk in during those hours, or WhatsApp ${NW.phoneDisplay} to book free pickup.`,
+  },
+  {
+    q: 'Which areas does New Way pick up from?',
+    a: `Free pickup and delivery from New Way covers ${NW.pickupAreas}. There is no minimum order in those zones. Sector lists and booking tips are on our laundry pickup areas guide.`,
+  },
+  {
+    q: 'What services does the F-10 shop handle?',
+    a: 'This counter is a dry cleaner and laundry: solvent dry cleaning, wash and fold, steam press, plus sofa and carpet care quoted on WhatsApp. The same quality bar as Pak Way in G-15.',
+  },
+  {
+    q: 'How do I book New Way on WhatsApp?',
+    a: `Message ${NW.phoneDisplay}. Send your sector, a time window, and a photo if you want a quote. You can also call ${NW.phoneSecondaryDisplay}. Quotes stay on WhatsApp — there is no public price list.`,
+  },
+];
+
+export const PAKWAY_FAQ = [
+  {
+    q: 'Where is Pak Way Dry Cleaners in G-15?',
+    a: `Pak Way is at ${PW.fullAddress}. Walk in at the basement counter, or WhatsApp ${PW.phoneDisplay} if you want a rider instead.`,
+  },
+  {
+    q: 'What are Pak Way’s opening hours?',
+    a: `The G-15 shop is open ${PW.hoursShort}, every day, for walk-ins and for arranging pickup. Message before you travel if you are coming from outside Markaz.`,
+  },
+  {
+    q: 'Which areas does Pak Way pick up from?',
+    a: `Pak Way riders cover ${PW.pickupAreas}. Free pickup, no minimum order in those zones. If you sit between G-15 and F-10, send your pin and we will route the closer shop.`,
+  },
+  {
+    q: 'What can I drop off at Century Mall Plaza?',
+    a: 'The same services as New Way: dry cleaning, wash and fold, steam press, and sofa or carpet jobs quoted on WhatsApp. Bridal and suits are collected here too — processing follows the same care steps.',
+  },
+  {
+    q: 'How do I book Pak Way on WhatsApp?',
+    a: `WhatsApp ${PW.phoneDisplay} with your sector, a window, and a photo for a quote. There is no public price list. Pickup and delivery stay free in covered G-sector areas.`,
+  },
+];
+
 /** FAQPage structured data derived from FAQ entries. */
 export function getFaqJsonLd(faqEntries = HOME_FAQ) {
   return {
