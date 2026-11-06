@@ -71,7 +71,7 @@ export function buildContactShopPanel(loc, panelId) {
     <div class="contact-shop-header">
       <span class="eyebrow">${loc.areaLabel}</span>
       <h2 style="margin-top:8px">${loc.name}</h2>
-      <p class="lede" style="margin-top:10px;font-size:15px">${loc.addressLine1} · ${loc.hoursShort} · ${loc.phoneDisplay}</p>
+      <p class="lede" style="margin-top:10px;font-size:15px">${loc.addressLine1} · ${loc.hoursShort} · <a href="tel:${loc.phone}">${loc.phoneDisplay}</a>${loc.phoneSecondary ? ` · <a href="tel:${loc.phoneSecondary}">${loc.phoneSecondaryDisplay}</a>` : ''}</p>
     </div>
     <div class="contact-split" style="margin-top:24px">
       <a href="${wa}" target="_blank" rel="noopener" class="contact-wa-card">
@@ -89,6 +89,9 @@ export function buildContactShopPanel(loc, panelId) {
         <a href="tel:${loc.phone}" class="contact-mini-card">
           <strong>Call</strong> ${loc.phoneDisplay}
         </a>
+        ${loc.phoneSecondary ? `<a href="tel:${loc.phoneSecondary}" class="contact-mini-card">
+          <strong>Call</strong> ${loc.phoneSecondaryDisplay}
+        </a>` : ''}
         <a href="${directions}" target="_blank" rel="noopener" class="contact-mini-card">
           <strong>Directions</strong> ${loc.addressLine1}
         </a>

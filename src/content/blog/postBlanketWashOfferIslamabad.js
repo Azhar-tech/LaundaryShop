@@ -1,4 +1,8 @@
 import { blogBookCtaHtml } from './blogCta.js';
+import { LOCATIONS } from '../../seo/constants.js';
+
+const NW = LOCATIONS.newWay;
+const PW = LOCATIONS.pakway;
 
 export const post = {
   slug: 'blanket-wash-offer-5th-free-islamabad',
@@ -49,7 +53,7 @@ export const post = {
 
       <h2>Available at both shops</h2>
       <p>
-        This offer runs at <a href="/new-way-dry-cleaners-f10">New Way Dry Cleaners, F10 Idrees Market</a> (0323 555 7878) and <a href="/pak-way-dry-cleaners-g15">Pak Way Dry Cleaners, G15 Century Mall Plaza</a> (0349 596 3359). Same quality wash at either location — pick the shop closer to you or use <a href="/contact#book">contact &amp; pickup booking</a>.
+        This offer runs at <a href="/new-way-dry-cleaners-f10">New Way Dry Cleaners, F10 Idrees Market</a> (${NW.phoneDisplay}) and <a href="/pak-way-dry-cleaners-g15">Pak Way Dry Cleaners, G15 Century Mall Plaza</a> (${PW.phoneDisplay}). Same quality wash at either location — pick the shop closer to you or use <a href="/contact#book">contact &amp; pickup booking</a>.
       </p>
 
       <h2>Simple terms</h2>

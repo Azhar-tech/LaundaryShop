@@ -1,4 +1,7 @@
 import { blogBookCtaHtml } from './blogCta.js';
+import { LOCATIONS } from '../../seo/constants.js';
+
+const NW = LOCATIONS.newWay;
 
 export const post = {
   slug: 'how-often-dry-clean-suits-islamabad',
@@ -48,7 +51,7 @@ export const post = {
 
       <h2>Where to dry clean in Islamabad</h2>
       <p>
-        <a href="/new-way-dry-cleaners-f10">New Way Dry Cleaners</a> at F10/2 Idrees Market has handled suits, bridal wear, and coats since 2001, with free pickup across F sectors, E-11, Bahria, and DHA. For G-13 to G-16, <a href="/dry-cleaners-near-me-islamabad">Pak Way G15</a> is often closer — same quality bar, different doorstep routes.
+        <a href="/new-way-dry-cleaners-f10">New Way Dry Cleaners</a> at F10/2 Idrees Market has handled suits, bridal wear, and coats since ${NW.sinceYear}, with free pickup across F sectors, E-11, Bahria, and DHA. For G-13 to G-16, <a href="/dry-cleaners-near-me-islamabad">Pak Way G15</a> is often closer — same quality bar, different doorstep routes.
       </p>
     </div>
   </section>

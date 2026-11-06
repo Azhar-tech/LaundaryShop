@@ -25,9 +25,13 @@ const CORE_SERVICES = [
   { name: 'Carpet Cleaning', url: `${SITE_URL}/services#carpet` },
 ];
 
-function getSameAsUrls(gbpUrl) {
-  const urls = [gbpUrl, SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook].filter(Boolean);
-  return urls.length ? urls : undefined;
+function getSameAsUrls(loc) {
+  const urls = [loc.gbpUrl];
+  if (loc.id === 'newWay') {
+    urls.push(SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook);
+  }
+  const filled = urls.filter(Boolean);
+  return filled.length ? filled : undefined;
 }
 
 /** @param {'newWay' | 'pakway'} locationId */
@@ -38,11 +42,14 @@ export function getLocationJsonLd(locationId) {
   const node = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    additionalType: 'https://schema.org/DryCleaningOrLaundry',
+    additionalType: [
+      'https://schema.org/DryCleaningOrLaundry',
+      'https://schema.org/LaundryService',
+    ],
     '@id': `${pageUrl}#localbusiness`,
-    name: loc.name,
+    name: loc.gbpName || loc.name,
     alternateName: loc.alternateName,
-    description: `${loc.name} — laundry, dry cleaning and steam press at ${loc.areaLabel}, Islamabad. Book on WhatsApp or walk in daily ${loc.hoursShort}.`,
+    description: `${loc.gbpName || loc.name} — ${loc.primaryCategory.toLowerCase()} and ${loc.secondaryCategory.toLowerCase()} at ${loc.areaLabel}, Islamabad. Book on WhatsApp or walk in daily ${loc.hoursShort}.`,
     url: pageUrl,
     image: LOGO_URL,
     logo: LOGO_URL,
@@ -93,7 +100,30 @@ export function getLocationJsonLd(locationId) {
     },
   };
 
-  const sameAs = getSameAsUrls(loc.gbpUrl);
+  if (loc.foundingDate) node.foundingDate = loc.foundingDate;
+  else if (loc.sinceYear) node.foundingDate = String(loc.sinceYear);
+
+  const contactPoints = [
+    {
+      '@type': 'ContactPoint',
+      telephone: loc.phone,
+      contactType: 'customer service',
+      areaServed: 'PK',
+      availableLanguage: ['en', 'ur'],
+    },
+  ];
+  if (loc.phoneSecondary) {
+    contactPoints.push({
+      '@type': 'ContactPoint',
+      telephone: loc.phoneSecondary,
+      contactType: 'customer service',
+      areaServed: 'PK',
+      availableLanguage: ['en', 'ur'],
+    });
+  }
+  node.contactPoint = contactPoints;
+
+  const sameAs = getSameAsUrls(loc);
   if (sameAs) node.sameAs = sameAs;
   if (loc.gbpUrl) node.hasMap = loc.gbpUrl;
   if (loc.aggregateRating?.ratingValue && loc.aggregateRating?.reviewCount) {

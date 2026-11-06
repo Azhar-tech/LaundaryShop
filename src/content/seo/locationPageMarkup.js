@@ -2,15 +2,22 @@
 
 function googleRatingCard(loc) {
   const rating = loc.aggregateRating;
-  if (!rating?.ratingValue || !rating?.reviewCount || !loc.gbpUrl) return '';
+  if (!rating?.ratingValue || !rating?.reviewCount) return '';
+  const mapsLink = loc.gbpUrl
+    ? `<br/><a href="${loc.gbpUrl}" target="_blank" rel="noopener">See reviews on Google Maps</a>`
+    : '';
   return `
         <article style="padding: 28px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--bg);">
           <h3 style="font-size: 18px; margin-bottom: 10px;">Google rating</h3>
           <p style="margin: 0; line-height: 1.65;">
-            ${rating.ratingValue}&#9733; from ${rating.reviewCount} Google reviews<br/>
-            <a href="${loc.gbpUrl}" target="_blank" rel="noopener">See reviews on Google Maps</a>
+            ${rating.ratingValue}&#9733; from ${rating.reviewCount} Google reviews${mapsLink}
           </p>
         </article>`;
+}
+
+function extraPhoneLine(loc) {
+  if (!loc.phoneSecondary) return '';
+  return `<br/><a href="tel:${loc.phoneSecondary}">${loc.phoneSecondaryDisplay}</a>`;
 }
 
 /**
@@ -29,7 +36,7 @@ export function buildLocationMarkup(loc, other, urls) {
       <span class="eyebrow" style="margin-bottom:14px">${loc.areaLabel}</span>
       <h1>${loc.name} — ${loc.areaLabel}, Islamabad</h1>
       <p class="lede">
-        ${sinceLine} Dry cleaning, wash &amp; fold, steam press and free pickup across Islamabad. Call <a href="tel:${loc.phone}">${loc.phoneDisplay}</a> or WhatsApp to book.
+        ${sinceLine} Dry cleaner and laundry — wash &amp; fold, steam press and free pickup across Islamabad. Call <a href="tel:${loc.phone}">${loc.phoneDisplay}</a>${loc.phoneSecondary ? ` or <a href="tel:${loc.phoneSecondary}">${loc.phoneSecondaryDisplay}</a>` : ''} or WhatsApp to book.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
         <a class="btn btn-primary" href="${urls.whatsapp}">WhatsApp ${loc.phoneDisplay}
@@ -90,7 +97,7 @@ export function buildLocationMarkup(loc, other, urls) {
             <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
             <div>
               <div class="lab">Phone / WhatsApp</div>
-              <div class="val"><a href="tel:${loc.phone}">${loc.phoneDisplay}</a></div>
+              <div class="val"><a href="tel:${loc.phone}">${loc.phoneDisplay}</a>${extraPhoneLine(loc)}</div>
             </div>
           </div>
           <div style="display:flex; gap:10px; margin-top:6px; flex-wrap:wrap;">

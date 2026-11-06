@@ -2,9 +2,14 @@ import {
   areasHtml,
   breadcrumbHtml,
   landingImg,
+  PRIMARY_WHATSAPP_HREF,
   processSectionHtml,
   quoteCtaHtml,
 } from '../../seo/landingHtml.js';
+import { LOCATIONS } from '../../seo/constants.js';
+
+const NW = LOCATIONS.newWay;
+const PW = LOCATIONS.pakway;
 
 const washImg = landingImg({
   src: '/WashandFold.webp',
@@ -34,7 +39,7 @@ export const MARKUP = `
         Everyday laundry is sorted by colour, washed, dried and folded, then returned ready to put away. Book free pickup on WhatsApp — New Way F-10 or Pak Way G-15 — with no minimum order. Standard turnaround is about 24 hours; same-day is available when you ask.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://wa.me/923235557878" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
+        <a class="btn btn-primary" href="${PRIMARY_WHATSAPP_HREF}" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
         <a class="btn btn-ghost" href="/contact#book">Book pickup</a>
       </div>
     </div>
@@ -68,7 +73,7 @@ export const MARKUP = `
     steps: [
       {
         title: 'WhatsApp a shop',
-        text: 'New Way 0323 555 7878 or Pak Way 0349 596 3359. Send your sector, a window, and a photo if you want a quote first.',
+        text: `New Way ${NW.phoneDisplay} or Pak Way ${PW.phoneDisplay}. Send your sector, a window, and a photo if you want a quote first.`,
       },
       {
         title: 'We pick up',
@@ -125,6 +130,6 @@ export const MARKUP = `
 
   ${quoteCtaHtml({
     heading: 'Send a photo. Get a wash-and-fold quote.',
-    text: 'Book before 5pm for same-day pickup on many everyday loads. No minimum order. New Way 0323 555 7878 · Pak Way 0349 596 3359.',
+    text: `Book before 5pm for same-day pickup on many everyday loads. No minimum order. New Way ${NW.phoneDisplay} · Pak Way ${PW.phoneDisplay}.`,
   })}
 `;

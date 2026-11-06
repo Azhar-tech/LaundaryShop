@@ -3,6 +3,7 @@ import {
   breadcrumbHtml,
   landingImg,
   processSectionHtml,
+  PRIMARY_WHATSAPP_HREF,
   quoteCtaHtml,
 } from '../../seo/landingHtml.js';
 import { LOCATIONS } from '../../seo/constants.js';
@@ -38,7 +39,7 @@ export const MARKUP = `
         Two laundry shops in Islamabad: <strong>New Way</strong> at F-10/2 Idrees Market and <strong>Pak Way</strong> at Century Mall Plaza, G-15 Markaz. New Way ${NW.hoursShort}, Pak Way ${PW.hoursShort}. Walk in, or book free doorstep pickup for wash &amp; fold — no minimum order.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://wa.me/923235557878" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
+        <a class="btn btn-primary" href="${PRIMARY_WHATSAPP_HREF}" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
         <a class="btn btn-ghost" href="/laundry-service-islamabad">Wash &amp; fold details</a>
       </div>
     </div>

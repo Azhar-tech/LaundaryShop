@@ -3,6 +3,7 @@ import {
   breadcrumbHtml,
   landingImg,
   processSectionHtml,
+  PRIMARY_WHATSAPP_HREF,
   quoteCtaHtml,
 } from '../../seo/landingHtml.js';
 import { LOCATIONS } from '../../seo/constants.js';
@@ -38,7 +39,7 @@ export const MARKUP = `
         Already washed at home but facing a backlog of shirts and kameez? Book ironing-only pickup. We finish office wear, uniforms and traditional sets on commercial steam presses, then return them on hangers. Walk in at F-10 (${NW.hoursShort}) or G-15 (${PW.hoursShort}).
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://wa.me/923235557878" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
+        <a class="btn btn-primary" href="${PRIMARY_WHATSAPP_HREF}" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
         <a class="btn btn-ghost" href="/contact#book">Book pickup</a>
       </div>
     </div>
@@ -75,7 +76,7 @@ export const MARKUP = `
     steps: [
       {
         title: 'WhatsApp the shop',
-        text: '0323 555 7878 (New Way) or 0349 596 3359 (Pak Way). Count of shirts or sets is enough for a quote.',
+        text: `${NW.phoneDisplay} (New Way) or ${PW.phoneDisplay} (Pak Way). Count of shirts or sets is enough for a quote.`,
       },
       {
         title: 'We pick up',
@@ -124,6 +125,6 @@ export const MARKUP = `
 
   ${quoteCtaHtml({
     heading: 'Send a shirt count. Get a press quote.',
-    text: `Ironing-only or mixed with laundry — say which. New Way ${NW.hoursShort} · Pak Way ${PW.hoursShort}. New Way 0323 555 7878 · Pak Way 0349 596 3359.`,
+    text: `Ironing-only or mixed with laundry — say which. New Way ${NW.hoursShort} · Pak Way ${PW.hoursShort}. New Way ${NW.phoneDisplay} · Pak Way ${PW.phoneDisplay}.`,
   })}
 `;

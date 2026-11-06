@@ -1,7 +1,9 @@
-import { LOCATIONS } from './constants.js';
+import { LOCATIONS, getWhatsAppUrl } from './constants.js';
 
 const NW = LOCATIONS.newWay;
 const PW = LOCATIONS.pakway;
+
+export const PRIMARY_WHATSAPP_HREF = getWhatsAppUrl(NW);
 
 export function breadcrumbHtml(label) {
   return `<nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> → <span>${label}</span></nav>`;
@@ -48,7 +50,7 @@ export function quoteCtaHtml({ heading, text }) {
           <p style="margin-top:14px">${text}</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary btn-lg" href="https://wa.me/923235557878" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
+          <a class="btn btn-primary btn-lg" href="${getWhatsAppUrl(NW)}" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
           <a class="btn btn-ghost btn-lg" href="/contact#book">Book pickup</a>
         </div>
       </div>

@@ -2,9 +2,14 @@ import {
   areasHtml,
   breadcrumbHtml,
   landingImg,
+  PRIMARY_WHATSAPP_HREF,
   processSectionHtml,
   quoteCtaHtml,
 } from '../../seo/landingHtml.js';
+import { LOCATIONS } from '../../seo/constants.js';
+
+const NW = LOCATIONS.newWay;
+const PW = LOCATIONS.pakway;
 
 const dryImg = landingImg({
   src: '/dryCleaning.webp',
@@ -34,7 +39,7 @@ export const MARKUP = `
         Suits, sarees, coats and bridal pieces are hand-checked, solvent-cleaned and pressed — not machine-washed. Drop in at New Way F-10 or Pak Way G-15, or book free pickup. Standard turnaround is about 24 hours; same-day is available when you ask.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://wa.me/923235557878" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
+        <a class="btn btn-primary" href="${PRIMARY_WHATSAPP_HREF}" target="_blank" rel="noopener">Get a quote on WhatsApp</a>
         <a class="btn btn-ghost" href="/services#dry-cleaning">See the item list</a>
       </div>
     </div>
@@ -86,7 +91,7 @@ export const MARKUP = `
   ${processSectionHtml({
     eyebrow: 'How it works',
     heading: 'WhatsApp, pickup, clean, return on hangers',
-    lede: 'Walk-ins welcome at both shops — New Way 8am–11pm, Pak Way 8am–9pm. Pickup is free in covered areas with no minimum order.',
+    lede: `Walk-ins welcome at both shops — New Way ${NW.hoursShort}, Pak Way ${PW.hoursShort}. Pickup is free in covered areas with no minimum order.`,
     steps: [
       {
         title: 'WhatsApp a photo',
@@ -134,6 +139,6 @@ export const MARKUP = `
 
   ${quoteCtaHtml({
     heading: 'Not sure whether to dry-clean?',
-    text: 'WhatsApp a fabric close-up. We will say solvent, wash, or bring it in. New Way 0323 555 7878 · Pak Way 0349 596 3359.',
+    text: `WhatsApp a fabric close-up. We will say solvent, wash, or bring it in. New Way ${NW.phoneDisplay} · Pak Way ${PW.phoneDisplay}.`,
   })}
 `;

@@ -1,4 +1,8 @@
 import { blogBookCtaHtml } from './blogCta.js';
+import { LOCATIONS } from '../../seo/constants.js';
+
+const NW = LOCATIONS.newWay;
+const PW = LOCATIONS.pakway;
 
 export const post = {
   slug: 'laundry-pickup-areas-islamabad-f10-g15',
@@ -33,7 +37,7 @@ export const post = {
 
       <h2>Pak Way G15 — G sectors &amp; west growth corridor</h2>
       <p>
-        <a href="/pak-way-dry-cleaners-g15">Pak Way Dry Cleaners</a> sits in Century Mall Plaza, G15 Markaz — ideal if you live in G-13, G-14, G-15, G-16, or nearby housing schemes west of the city. WhatsApp <strong>0349 596 3359</strong> for G-sector slots; the team shares the same wash, dry-clean, and press standards as New Way.
+        <a href="/pak-way-dry-cleaners-g15">Pak Way Dry Cleaners</a> sits in Century Mall Plaza, G15 Markaz — ideal if you live in G-13, G-14, G-15, G-16, or nearby housing schemes west of the city. WhatsApp <strong>${PW.phoneDisplay}</strong> for G-sector slots; the team shares the same wash, dry-clean, and press standards as New Way.
       </p>
 
       <h2>Rawalpindi &amp; “twin city” bookings</h2>
@@ -46,7 +50,7 @@ export const post = {
         <li>Wash &amp; fold, dry cleaning, steam press — or a mixed bag</li>
         <li>Return delivery in the slot you choose</li>
         <li>No minimum order in covered zones</li>
-        <li>Walk-in option: New Way 8am–11pm, Pak Way 8am–9pm, daily at either shop</li>
+        <li>Walk-in option: New Way ${NW.hoursShort}, Pak Way ${PW.hoursShort}, daily at either shop</li>
       </ul>
       <p>
         For service details see our <a href="/laundry-service-islamabad">laundry service page</a> and <a href="/contact">contact &amp; maps</a>. Not sure which shop is closer? Use <a href="/laundry-near-me-islamabad">laundry near me</a> tips or message both numbers — we will point you to the right rider.

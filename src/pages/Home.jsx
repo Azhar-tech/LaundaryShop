@@ -5,6 +5,10 @@ import { getFaqJsonLd } from '../seo/faqData.js';
 import { buildFaqSectionHtml } from '../seo/faqMarkup.js';
 import { SHOP_PICKER, DUAL_SHOPS_SECTION } from '../content/seo/shopSections.js';
 import { getOrganizationJsonLd } from '../seo/localBusinessJsonLd.js';
+import { LOCATIONS } from '../seo/constants.js';
+
+const NW = LOCATIONS.newWay;
+const PW = LOCATIONS.pakway;
 
 const MARKUP_RAW = `${SHOP_PICKER}
 
@@ -17,7 +21,7 @@ const MARKUP = MARKUP_RAW.replace('__DUAL_SHOPS__', DUAL_SHOPS_SECTION)
   '__FAQ__',
   buildFaqSectionHtml(undefined, {
     footerHtml:
-      '<p class="lede" style="margin-top:24px; max-width:56ch; font-size:15px;">Two shops: <a href="/new-way-dry-cleaners-f10">New Way F10</a> (0323 555 7878) · <a href="/pak-way-dry-cleaners-g15">Pak Way G15</a> (0349 596 3359). Or explore <a href="/laundry-service-islamabad">laundry</a>, <a href="/dry-cleaning-islamabad">dry cleaning</a> &amp; <a href="/ironing-service-islamabad">ironing</a>. Tips on our <a href="/blog">blog</a>.</p>',
+      `<p class="lede" style="margin-top:24px; max-width:56ch; font-size:15px;">Two shops: <a href="/new-way-dry-cleaners-f10">New Way F10</a> (${NW.phoneDisplay}) · <a href="/pak-way-dry-cleaners-g15">Pak Way G15</a> (${PW.phoneDisplay}). Or explore <a href="/laundry-service-islamabad">laundry</a>, <a href="/dry-cleaning-islamabad">dry cleaning</a> &amp; <a href="/ironing-service-islamabad">ironing</a>. Tips on our <a href="/blog">blog</a>.</p>`,
   }),
 );
 

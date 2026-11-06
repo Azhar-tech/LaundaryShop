@@ -35,7 +35,7 @@ export const HOME_FAQ = [
   },
   {
     q: 'Do you offer dhobi / laundry pickup near me?',
-    a: 'Yes. Think of us as a modern dhobi with pickup: we collect, wash, fold or dry-clean, press if needed, and deliver back—book on WhatsApp at 0323 555 7878 with no minimum order.',
+    a: `Yes. Think of us as a modern dhobi with pickup: we collect, wash, fold or dry-clean, press if needed, and deliver back—book on WhatsApp at ${NW.phoneDisplay} with no minimum order.`,
   },
   {
     q: 'Laundromat vs pickup laundry — what\'s the difference in Islamabad?',
