@@ -98,6 +98,16 @@ function NavLinkItem({ to, label, end, drawer = false }) {
   );
 }
 
+/** Tweaks panel uses window/localStorage — mount only after hydration. */
+function ClientOnlyTweaks() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    setReady(true);
+  }, []);
+  if (!ready) return null;
+  return <SiteTweaks />;
+}
+
 function SiteTweaks() {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
@@ -448,7 +458,7 @@ export function Layout() {
         </div>
       </footer>
 
-      <SiteTweaks />
+      <ClientOnlyTweaks />
     </>
   );
 }

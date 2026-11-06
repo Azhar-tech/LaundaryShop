@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { DEFAULT_LOCALE, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from './constants.js';
 
@@ -14,6 +13,7 @@ import { DEFAULT_LOCALE, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from './constan
  * @param {string} [props.modifiedAt] ISO date for article:modified_time
  * @param {string} [props.ogImageAlt] Alt text for og:image / twitter:image
  * @param {string} [props.exactTitle] Use as the full <title>, skipping the site-name suffix
+ * @param {string} [props.robots] Optional robots directive, e.g. `noindex`
  */
 export function SeoHead({
   title,
@@ -26,13 +26,8 @@ export function SeoHead({
   modifiedAt,
   ogImageAlt,
   exactTitle,
+  robots,
 }) {
-  // index.html keeps a baseline title/description for crawlers that skip JS.
-  // Once Helmet has set route-specific tags, drop the static ones to avoid duplicates.
-  useEffect(() => {
-    document.querySelectorAll('[data-static-seo]').forEach((el) => el.remove());
-  }, []);
-
   const normalizedPath = path === '/' ? '/' : path.replace(/\/$/, '') || '/';
   const canonical = `${SITE_URL}${normalizedPath === '/' ? '/' : normalizedPath}`;
   const image = ogImage
@@ -47,6 +42,7 @@ export function SeoHead({
       <html lang="en-PK" />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {robots ? <meta name="robots" content={robots} /> : null}
       {keywords ? <meta name="keywords" content={keywords} /> : null}
       <link rel="canonical" href={canonical} />
 

@@ -32,7 +32,7 @@ export const post = {
         alt="Laundry professional steam pressing a navy garment with freshly cleaned shirts and jackets hanging in protective covers behind"
         width="1536"
         height="1024"
-        fetchpriority="high"
+        fetchPriority="high"
         decoding="async"
       />
     </div>
