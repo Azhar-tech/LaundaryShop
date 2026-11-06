@@ -1,5 +1,5 @@
 import { PageContent } from '../PageContent.jsx';
-import { SeoHead } from '../seo/SeoHead.jsx';
+import { PageSeo } from '../seo/PageSeo.jsx';
 import { JsonLdScript } from '../seo/JsonLdScript.jsx';
 import { getFaqJsonLd } from '../seo/faqData.js';
 import { buildFaqSectionHtml } from '../seo/faqMarkup.js';
@@ -24,12 +24,7 @@ const MARKUP = MARKUP_RAW.replace('__DUAL_SHOPS__', DUAL_SHOPS_SECTION)
 export default function Home() {
   return (
     <>
-      <SeoHead
-        title="Laundry & Dry Cleaning Islamabad — New Way & Pak Way"
-        description="LaundryCare.pk — two dry cleaning shops in Islamabad: New Way F10 (0323 555 7878) & Pak Way G15 (0349 596 3359). Free pickup · open 8am–10pm."
-        path="/"
-        keywords="laundry Islamabad, dry cleaning Islamabad, New Way F10, Pak Way G15, LaundryCare.pk, laundry pickup Islamabad"
-      />
+      <PageSeo path="/" />
       <JsonLdScript id="ld-organization" json={getOrganizationJsonLd()} />
       <JsonLdScript id="ld-faq-home" json={getFaqJsonLd()} />
       <PageContent html={MARKUP} />

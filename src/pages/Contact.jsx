@@ -1,5 +1,5 @@
 import { PageContent } from '../PageContent.jsx';
-import { SeoHead } from '../seo/SeoHead.jsx';
+import { PageSeo } from '../seo/PageSeo.jsx';
 import { buildContactShopPanel } from '../content/seo/shopSections.js';
 import { LOCATIONS } from '../seo/constants.js';
 
@@ -28,12 +28,7 @@ const MARKUP = `
 export default function Contact() {
   return (
     <>
-      <SeoHead
-        title="Contact New Way & Pak Way — LaundryCare.pk Islamabad"
-        description="Contact LaundryCare.pk: New Way F10 (0323 555 7878) or Pak Way G15 (0349 596 3359). Book laundry pickup on WhatsApp · open 8am–10pm daily."
-        path="/contact"
-        keywords="LaundryCare.pk contact, New Way F10, Pak Way G15, book laundry pickup Islamabad WhatsApp"
-      />
+      <PageSeo path="/contact" />
       <PageContent html={MARKUP} />
     </>
   );

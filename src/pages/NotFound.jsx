@@ -1,15 +1,10 @@
 import { Link } from 'react-router-dom';
-import { SeoHead } from '../seo/SeoHead.jsx';
+import { PageSeo } from '../seo/PageSeo.jsx';
 
 export default function NotFound() {
   return (
     <>
-      <SeoHead
-        title="Page not found"
-        description="That page is not on LaundryCare.pk. Go home or contact New Way or Pak Way to book laundry pickup in Islamabad."
-        path="/404"
-        robots="noindex"
-      />
+      <PageSeo path="/404" robots="noindex" />
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ marginBottom: 14 }}>

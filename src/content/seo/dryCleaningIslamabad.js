@@ -4,9 +4,9 @@ export const MARKUP = `
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow" style="margin-bottom:14px">Dry cleaning Islamabad</span>
-      <h1>Dry cleaners in Islamabad for suits, sarees &amp; bridal</h1>
+      <h1>Dry cleaning for suits, sarees and bridal wear</h1>
       <p class="lede">
-        Need <strong>dry cleaning in Islamabad</strong> you can rely on for suits, sarees and coats? Garments arrive at New Way LaundryCare.pk in Idrees Market, where technicians spot-clean by hand before solvent cycles tailored to fibres and trims — then finish on presses built for Pakistani wardrobes.
+        Suits, sarees, coats and bridal pieces are hand-checked, solvent-cleaned and pressed — not machine-washed. Drop in at New Way F-10 or Pak Way G-15, or book free pickup. Standard turnaround is about 24 hours; same-day is available when you ask.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
         <a class="btn btn-primary" href="/contact#book">Schedule pickup</a>

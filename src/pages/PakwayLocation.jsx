@@ -1,6 +1,6 @@
 import { PageContent } from '../PageContent.jsx';
 import { buildLocationMarkup } from '../content/seo/locationPageMarkup.js';
-import { SeoHead } from '../seo/SeoHead.jsx';
+import { PageSeo } from '../seo/PageSeo.jsx';
 import { JsonLdScript } from '../seo/JsonLdScript.jsx';
 import { getLocationJsonLd } from '../seo/localBusinessJsonLd.js';
 import {
@@ -21,12 +21,7 @@ const MARKUP = buildLocationMarkup(loc, other, {
 export default function PakwayLocation() {
   return (
     <>
-      <SeoHead
-        title="Pak Way Dry Cleaners G15 — Century Mall Plaza Islamabad"
-        description="Pak Way Dry Cleaners at G15 Markaz Century Mall Plaza: dry cleaning, laundry & pickup. Call 0349 596 3359 · open 8am–10pm daily."
-        path={`/${loc.slug}`}
-        keywords="Pak Way dry cleaners G15, Century Mall Plaza laundry Islamabad, LaundryCare.pk G-15"
-      />
+      <PageSeo path={`/${loc.slug}`} />
       <JsonLdScript id="ld-json-pakway" json={getLocationJsonLd('pakway')} />
       <PageContent html={MARKUP} />
     </>

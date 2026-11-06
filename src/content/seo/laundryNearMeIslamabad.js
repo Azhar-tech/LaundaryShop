@@ -4,9 +4,9 @@ export const MARKUP = `
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow" style="margin-bottom:14px">Near you · Islamabad</span>
-      <h1>Laundry near me in Islamabad — doorstep pickup, wash &amp; fold</h1>
+      <h1>Laundry near you — New Way F-10 and Pak Way G-15</h1>
       <p class="lede">
-        Searching for <strong>laundry near me</strong>, a <strong>laundry shop near me</strong>, or a <strong>dhobi near me</strong>? New Way (LaundryCare.pk) picks up from your door across Islamabad and Rawalpindi—no trip to a laundromat, no minimum order, and free delivery in covered areas.
+        Two laundry shops in Islamabad: <strong>New Way</strong> at F-10/2 Idrees Market and <strong>Pak Way</strong> at Century Mall Plaza, G-15 Markaz. Both open 8am–10pm daily. Walk in, or book free doorstep pickup for wash &amp; fold — no minimum order.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
         <a class="btn btn-primary" href="/contact#book">Book free pickup

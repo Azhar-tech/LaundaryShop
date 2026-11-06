@@ -38,7 +38,7 @@ for (const routePath of routes) {
   }
   const html = fs.readFileSync(file, 'utf8');
   const h1 = (html.match(/<h1\b/gi) || []).length;
-  const title = extract(html, /<title>([^<]*)<\/title>/i);
+  const title = extract(html, /<title[^>]*>([^<]*)<\/title>/i);
   const canonical = extract(html, /<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)
     || extract(html, /<link[^>]*href=["']([^"']+)["'][^>]*rel=["']canonical["']/i);
   const jsonLd = (html.match(/application\/ld\+json/gi) || []).length;

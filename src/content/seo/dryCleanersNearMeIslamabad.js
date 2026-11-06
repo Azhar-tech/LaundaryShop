@@ -4,9 +4,9 @@ export const MARKUP = `
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow" style="margin-bottom:14px">Near you · Islamabad</span>
-      <h1>Dry cleaners near me in Islamabad — F10 shop + free pickup</h1>
+      <h1>Dry cleaners near you — F-10 Idrees Market and G-15</h1>
       <p class="lede">
-        Looking for <strong>dry cleaners near me</strong> or a <strong>dry cleaner near me</strong> you can trust with suits, sarees and coats? New Way Dry Cleaners (LaundryCare.pk) has served Islamabad from F10/2 Idrees Market since 2001—with free pickup if the shop is not on your route.
+        Two dry cleaners in Islamabad: <strong>New Way</strong> at F-10/2 Idrees Market (0323 555 7878) and <strong>Pak Way</strong> at Century Mall Plaza, G-15 (0349 596 3359). Open 8am–10pm daily. Walk in, or book free pickup if the shop is not on your route.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
         <a class="btn btn-primary" href="/contact#book">Book pickup

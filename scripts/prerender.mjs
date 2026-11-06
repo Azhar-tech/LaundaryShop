@@ -27,6 +27,26 @@ function outFileForPath(routePath) {
   return path.join(distDir, rel, 'index.html');
 }
 
+/**
+ * react-helmet-async 3 on React 19 renders <title>/<meta>/<link>/<script>
+ * into the component tree. Hoist them into <head> for crawlers, and strip
+ * them from #root so hydration matches the client hoist.
+ */
+function hoistHeadTagsFromBody(appHtml) {
+  const parts = [];
+  const take = (re) => {
+    appHtml = appHtml.replace(re, (match) => {
+      parts.push(match);
+      return '';
+    });
+  };
+  take(/<title\b[^>]*>[\s\S]*?<\/title>/gi);
+  take(/<meta\b[^>]*>/gi);
+  take(/<link\b[^>]*>/gi);
+  take(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi);
+  return { body: appHtml, head: parts.join('\n    ') };
+}
+
 function applyHelmet(template, appHtml, helmet) {
   let html = template;
 
@@ -35,12 +55,14 @@ function applyHelmet(template, appHtml, helmet) {
     html = html.replace(/<html([^>]*)>/i, `<html$1 ${htmlAttrs}>`);
   }
 
+  const hoisted = hoistHeadTagsFromBody(appHtml);
   const headBits = [
     helmet?.title?.toString?.() || '',
     helmet?.meta?.toString?.() || '',
     helmet?.link?.toString?.() || '',
     helmet?.script?.toString?.() || '',
     helmet?.style?.toString?.() || '',
+    hoisted.head,
   ]
     .filter(Boolean)
     .join('\n    ');
@@ -48,7 +70,7 @@ function applyHelmet(template, appHtml, helmet) {
   html = html.replace('</head>', `    ${headBits}\n  </head>`);
   html = html.replace(
     /<div id="root"><\/div>/,
-    `<div id="root">${appHtml}</div>`,
+    `<div id="root">${hoisted.body}</div>`,
   );
   return html;
 }

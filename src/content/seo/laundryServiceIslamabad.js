@@ -4,9 +4,9 @@ export const MARKUP = `
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow" style="margin-bottom:14px">Laundry Islamabad</span>
-      <h1>Laundry service in Islamabad — wash, fold & free pickup</h1>
+      <h1>Wash &amp; fold laundry with free pickup in Islamabad</h1>
       <p class="lede">
-        Book <strong>laundry pickup in Islamabad</strong> and Rawalpindi with New Way (LaundryCare.pk). We collect from your door, wash and fold with care at our F10 facility, and return ready-to-put-away stacks — no minimum order and no delivery charge in covered areas.
+        Everyday laundry is sorted by colour, washed, dried and folded, then returned ready to put away. Book free pickup on WhatsApp — New Way F-10 or Pak Way G-15 — with no minimum order. Standard turnaround is about 24 hours; same-day is available when you ask.
       </p>
       <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap">
         <a class="btn btn-primary" href="/contact#book">Book pickup
