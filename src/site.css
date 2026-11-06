@@ -40,6 +40,7 @@
   --font-urdu:    "Noto Nastaliq Urdu", "Plus Jakarta Sans", serif;
 
   --maxw: 1240px;
+  --sticky-bar-h: 60px;
 }
 
 /* Theme variants (set on <html data-theme="..."> via tweaks) */
@@ -1469,4 +1470,74 @@ a.nav-drawer-link.active {
 }
 .blog-offer-steps li {
   margin-bottom: 10px;
+}
+
+/* ── Sticky mobile contact bar ─────────────────────────────── */
+.sticky-contact-bar {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  body:has(.sticky-contact-bar) {
+    padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sticky-contact-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    gap: 8px;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: var(--sticky-bar-h);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    box-shadow: var(--shadow-md);
+  }
+
+  .sticky-contact-bar-link {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .sticky-contact-bar-link-call {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+
+  .sticky-contact-bar-link-wa {
+    background: var(--blue-700);
+    color: #fff;
+    border: 1px solid var(--blue-700);
+  }
+
+  .sticky-contact-bar-link:focus-visible {
+    outline: 2px solid var(--blue-700);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticky-contact-bar,
+  .sticky-contact-bar-link {
+    transition: none;
+    transform: none;
+  }
 }

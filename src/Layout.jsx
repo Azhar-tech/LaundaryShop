@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { LOCATIONS, SOCIAL_LINKS, getLocationPagePath, getWhatsAppUrl } from './seo/constants.js';
 import { useAnalytics } from './analytics.js';
+import { StickyContactBar } from './StickyContactBar.jsx';
 
 const NW = LOCATIONS.newWay;
 const PW = LOCATIONS.pakway;
@@ -400,6 +401,7 @@ export function Layout() {
         </div>
       </footer>
 
+      <StickyContactBar />
       <ClientOnlyTweaks />
     </>
   );

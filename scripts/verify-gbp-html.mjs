@@ -140,4 +140,14 @@ if (linkFailed) {
   throw new Error('verify-gbp-html: tel:/wa.me link used a number not in constants.js');
 }
 
+const notFoundHtml = read('/404');
+if (notFoundHtml.includes('sticky-contact-bar')) {
+  throw new Error('/404 must not render the sticky contact bar');
+}
+
+const nwHasBar = nwPage.includes('sticky-contact-bar');
+if (!nwHasBar) {
+  throw new Error('/new-way-dry-cleaners-f10 must render the sticky contact bar');
+}
+
 console.log('verify-gbp-html: ok');
