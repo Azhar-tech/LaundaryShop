@@ -4,7 +4,8 @@ export const SITE_URL = 'https://www.laundrycare.pk';
 /** TODO: paste a public itemised price list URL or path when ready. Landings use a WhatsApp quote until then. */
 export const PRICE_LIST_URL = '';
 
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
+export const LOGO_URL = `${SITE_URL}/logo.webp`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.webp`;
 
 export const DEFAULT_LOCALE = 'en_PK';
 

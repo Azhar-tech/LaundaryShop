@@ -1,5 +1,5 @@
 import {
-  DEFAULT_OG_IMAGE,
+  LOGO_URL,
   LOCATIONS,
   SITE_NAME,
   SITE_URL,
@@ -44,8 +44,8 @@ export function getLocationJsonLd(locationId) {
     alternateName: loc.alternateName,
     description: `${loc.name} — laundry, dry cleaning and steam press at ${loc.areaLabel}, Islamabad. Book on WhatsApp or walk in daily 8am–10pm.`,
     url: pageUrl,
-    image: DEFAULT_OG_IMAGE,
-    logo: DEFAULT_OG_IMAGE,
+    image: LOGO_URL,
+    logo: LOGO_URL,
     telephone: loc.phone,
     priceRange: '$$',
     parentOrganization: {
@@ -118,7 +118,7 @@ export function getOrganizationJsonLd() {
     '@id': `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
-    logo: DEFAULT_OG_IMAGE,
+    logo: LOGO_URL,
     subOrganization: locations.map((loc) => ({
       '@type': 'LocalBusiness',
       name: loc.name,

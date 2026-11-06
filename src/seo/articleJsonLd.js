@@ -1,4 +1,4 @@
-import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from './constants.js';
+import { DEFAULT_OG_IMAGE, LOGO_URL, SITE_NAME, SITE_URL } from './constants.js';
 
 function absoluteUrl(src) {
   if (!src) return DEFAULT_OG_IMAGE;
@@ -30,7 +30,7 @@ export function getArticleJsonLd(post) {
       url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: DEFAULT_OG_IMAGE,
+        url: LOGO_URL,
       },
     },
     image: absoluteUrl(post.image),

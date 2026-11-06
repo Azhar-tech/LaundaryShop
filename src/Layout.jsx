@@ -1,30 +1,19 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import {
-  TweaksPanel,
-  TweakSection,
-  TweakColor,
-  TweakToggle,
-  TweakRadio,
-  useTweaks,
-} from './tweak/tweaksPanel.jsx';
 import { HOURS_LABEL, LOCATIONS, SOCIAL_LINKS, getLocationPagePath } from './seo/constants.js';
 
 const NW = LOCATIONS.newWay;
 const PW = LOCATIONS.pakway;
 
-const TWEAK_DEFAULTS = {
-  theme: 'default',
-  font: 'warm',
-  heroVariant: 'illustration',
-  dark: false,
-};
+const DevSiteTweaks = import.meta.env.DEV
+  ? lazy(() => import('./tweak/SiteTweaks.jsx'))
+  : null;
 
 function LogoMark() {
   return (
     <span className="logo-mark" aria-hidden="true">
       <img
-        src="/logo.png"
+        src="/logo.webp"
         alt="LaundryCare.pk — New Way & Pak Way Dry Cleaners, Islamabad"
         width="440"
         height="104"
@@ -98,77 +87,17 @@ function NavLinkItem({ to, label, end, drawer = false }) {
   );
 }
 
-/** Tweaks panel uses window/localStorage — mount only after hydration. */
+/** Tweaks panel is DEV-only and uses window/localStorage — mount after hydration. */
 function ClientOnlyTweaks() {
   const [ready, setReady] = useState(false);
   useEffect(() => {
     setReady(true);
   }, []);
-  if (!ready) return null;
-  return <SiteTweaks />;
-}
-
-function SiteTweaks() {
-  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', t.dark ? 'midnight' : t.theme);
-    document.documentElement.setAttribute('data-font', t.font);
-    const card = document.querySelector('.hero-main-card');
-    if (card) card.style.display = t.heroVariant === 'illustration' ? '' : 'none';
-    const visual = document.querySelector('.hero-visual');
-    const grid = document.querySelector('.hero-grid');
-    if (visual && grid) {
-      if (t.heroVariant === 'none') {
-        visual.style.display = 'none';
-        grid.style.gridTemplateColumns = '1fr';
-      } else {
-        visual.style.display = '';
-        grid.style.gridTemplateColumns = '';
-      }
-    }
-  }, [t]);
-
+  if (!import.meta.env.DEV || !DevSiteTweaks || !ready) return null;
   return (
-    <TweaksPanel title="Tweaks">
-      <TweakSection label="Colour palette" />
-      <TweakColor
-        label="Theme"
-        value={t.theme}
-        options={[
-          ['#1E4FD9', '#E6F0FF', '#B9E8D8'],
-          ['#0C7CC4', '#E1F2FB', '#C8EFE5'],
-          ['#0E7A6A', '#DCF3EE', '#FFD79A'],
-        ]}
-        onChange={(v) => {
-          const palette = [
-            ['#1E4FD9', '#E6F0FF', '#B9E8D8'],
-            ['#0C7CC4', '#E1F2FB', '#C8EFE5'],
-            ['#0E7A6A', '#DCF3EE', '#FFD79A'],
-          ];
-          const map = { 0: 'default', 1: 'ocean', 2: 'lagoon' };
-          const idx = palette.findIndex((p) => JSON.stringify(p) === JSON.stringify(v));
-          setTweak('theme', map[idx] || 'default');
-        }}
-      />
-      <TweakToggle label="Dark mode" value={t.dark} onChange={(v) => setTweak('dark', v)} />
-
-      <TweakSection label="Typography" />
-      <TweakRadio
-        label="Headings"
-        value={t.font}
-        options={['warm', 'classic', 'techy']}
-        onChange={(v) => setTweak('font', v)}
-      />
-
-      <TweakSection label="Hero" />
-      <TweakRadio
-        label="Visual"
-        value={t.heroVariant}
-        options={['illustration', 'none']}
-        onChange={(v) => setTweak('heroVariant', v)}
-      />
-    </TweaksPanel>
+    <Suspense fallback={null}>
+      <DevSiteTweaks />
+    </Suspense>
   );
 }
 
